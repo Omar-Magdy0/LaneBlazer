@@ -1,0 +1,93 @@
+\doxysection{rotry\+\_\+encoder.\+h}
+\hypertarget{rotry__encoder_8h_source}{}\label{rotry__encoder_8h_source}\index{src/module/rotry\_encoder.h@{src/module/rotry\_encoder.h}}
+\mbox{\hyperlink{rotry__encoder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{../Config.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{debug__interface_8h}{core/debug\_interface.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BACKWARD\ -\/1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ FORWARD\ 1}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structencoder__data__t}{encoder\_data\_t}}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structencoder__data__t_a8177c111c9bc228e574ab991f24551a0}{angV\_rad\_s}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structencoder__data__t_acdb7496fab794eadd099df518c58cc94}{ang\_rad}};}
+\DoxyCodeLine{00023\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structencoder__data__t_a77420d47c3d17ae54bf61bb724da6031}{pulses}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}<u\textcolor{keywordtype}{int}8\_t\ pin,u\textcolor{keywordtype}{int}8\_t\ mode,\ u\textcolor{keywordtype}{int}8\_t\ edge>}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpulse__rotry__encoder}{pulse\_rotry\_encoder}}\{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{volatile}\ uint16\_t\ pulses\_count\ =\ 0;\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ last\_pulse\_time\ =\ 0;\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ prev\_pulse\_time\ =\ 0;\ }
+\DoxyCodeLine{00041\ \ \ \ \ int8\_t\ last\_direction\ =\ \mbox{\hyperlink{rotry__encoder_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}{FORWARD}};\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpulse__rotry__encoder_a6f3b126fe7178c838fa3d2247e29f6ad}{init}}()\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ pinMode(pin,\ mode);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classpulse__rotry__encoder_a2cf2a1a660ffabaef57ba96d274b1a99}{read\_pulses}}()\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ temp\ =\ pulses\_count;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ pulses\_count\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp*last\_direction;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structencoder__data__t}{encoder\_data\_t}}\ \mbox{\hyperlink{classpulse__rotry__encoder_aeafd5b81faee34e4a23d4e70f5ef7a52}{get\_encoder\_data}}(uint16\_t\ pulses\_per\_rev,\ \textcolor{keywordtype}{float}\ check\_dt)\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ current\_time\ =\ micros();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structencoder__data__t}{encoder\_data\_t}}\ encoder\_data;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ encoder\ has\ stopped}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pulses\_count\ >\ 0)\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_time\ -\/\ last\_pulse\_time\ >\ \mbox{\hyperlink{_config_8h_aa71be3f4e3be2bcb8a1481d12bf594f3}{ENCODER\_TIMEOUT\_US}})\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a8177c111c9bc228e574ab991f24551a0}{angV\_rad\_s}}\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_acdb7496fab794eadd099df518c58cc94}{ang\_rad}}\ =\ pulses\_count*2.0*M\_PI*\ last\_direction;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ encoder\_data;\ \textcolor{comment}{//\ No\ recent\ pulses,\ assume\ speed\ =\ 0}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ pulse\_dt\_us\ =\ last\_pulse\_time\ -\/\ prev\_pulse\_time;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pulse\_dt\_us\ <\ \mbox{\hyperlink{_config_8h_a6b5205cdf406a98dc066003f2a4b7a51}{ENCODER\_MIN\_DT\_US}})\ pulse\_dt\_us\ =\ \mbox{\hyperlink{_config_8h_a6b5205cdf406a98dc066003f2a4b7a51}{ENCODER\_MIN\_DT\_US}};\ \textcolor{comment}{//\ Avoid\ division\ by\ zero}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pulses\_count\ <=\ \mbox{\hyperlink{_config_8h_a9f5e166fb134cb3ed6cc38ac07267b3c}{MIN\_PULSES\_LS}})\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Time\ between\ last\ two\ pulses\ (low\ speed\ method)}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ we\ only\ received\ very\ few\ pulses\ recently\ work\ with\ the\ last\ time\ difference}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a8177c111c9bc228e574ab991f24551a0}{angV\_rad\_s}}\ =\ (2.0\ *\ M\_PI\ *\ last\_direction)\ /\ ((pulse\_dt\_us\ /\ 1000000.0)\ *\ pulses\_per\_rev);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ High-\/speed\ method:\ Use\ pulse\ counting\ over\ fixed\ time\ }}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a8177c111c9bc228e574ab991f24551a0}{angV\_rad\_s}}\ =\ (pulses\_count\ *\ 2.0\ *\ M\_PI\ *\ last\_direction)\ /\ (pulses\_per\_rev\ *\ check\_dt);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ angle}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_acdb7496fab794eadd099df518c58cc94}{ang\_rad}}\ =\ pulses\_count*2.0*M\_PI*\ last\_direction;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ pulse\ counter}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a77420d47c3d17ae54bf61bb724da6031}{pulses}}\ =\ pulses\_count;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pulses\_count\ =\ 0;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ encoder\_data;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a8177c111c9bc228e574ab991f24551a0}{angV\_rad\_s}}\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_acdb7496fab794eadd099df518c58cc94}{ang\_rad}}\ =\ 0;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encoder\_data.\mbox{\hyperlink{structencoder__data__t_a77420d47c3d17ae54bf61bb724da6031}{pulses}}\ =\ pulses\_count;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ encoder\_data;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpulse__rotry__encoder_ac44d01c6163d270b30cee54668bc8816}{encoder\_set\_direction}}(int8\_t\ dir)\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ last\_direction\ =\ dir;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpulse__rotry__encoder_a8c8fdd20aa943ed53a75adccbdf51eca}{increment\_pulse}}()\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ prev\_pulse\_time\ =\ last\_pulse\_time;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ last\_pulse\_time\ =\ micros();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ pulses\_count++;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+
+\end{DoxyCode}

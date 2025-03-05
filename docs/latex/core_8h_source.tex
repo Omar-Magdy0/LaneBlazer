@@ -1,0 +1,40 @@
+\doxysection{core.\+h}
+\hypertarget{core_8h_source}{}\label{core_8h_source}\index{src/core/core.h@{src/core/core.h}}
+\mbox{\hyperlink{core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SBI32(reg,\ bit)\ ((reg)\ |=\ (1U\ <<\ (bit)))\ \ }\textcolor{comment}{//\ Set\ Bit}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CBI32(reg,\ bit)\ ((reg)\ \&=\ \string~(1U\ <<\ (bit)))\ }\textcolor{comment}{//\ Clear\ Bit}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BV32(reg,\ bit)\ ((reg)\ \&\ (1U\ <<\ (bit)))\ }\textcolor{comment}{//get\ bit\ value}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ SBI}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#define\ SBI(reg,\ bit)\ ((reg)\ |=\ (1U\ <<\ (bit)))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ CBI}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#define\ CBI(reg,\ bit)\ ((reg)\ \&=\ \string~(1U\ <<\ (bit)))}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ BV}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#define\ BV(reg,\ bit)\ ((reg)\ \&\ (1U\ <<\ (bit)))}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ ENABLED(x)\ ((x)==1)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DISABLED(x)\ ((x)==0)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CONF\_ENABLE\ 1}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CONF\_DISABLE\ 0}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ FREQ\_TO\_PTIME(F)(1.0/F)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PTIME\_TO\_FREQ(PT)(1.0/PT)}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SIGN(n)((n>0)?1:((n<0)?-\/1:0))}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SIGN\_NBIAS(n)((n<=0)?-\/1:1)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ SIGN\_PBIAS(n)((n>=0)?1:-\/1)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ POSITIVE\ 1}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ NEGATIVE\ -\/1}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ ZERO\ 0}}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

@@ -1,0 +1,99 @@
+\doxysection{track\+Alg Class Reference}
+\hypertarget{structtrack_alg}{}\label{structtrack_alg}\index{trackAlg@{trackAlg}}
+
+
+Class to implement the track algorithm for the vehicle.  
+
+
+
+
+{\ttfamily \#include $<$track\+Alg0.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structtrack_alg_a78d6d044ded7a2c7a848ed402dea3e05}{init}} (\mbox{\hyperlink{classvehicle}{vehicle}} \texorpdfstring{$\ast$}{*}\+\_\+veh, \mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\+\_\+t}} \texorpdfstring{$\ast$}{*}ir)
+\begin{DoxyCompactList}\small\item\em Initialize the track algorithm with the vehicle and IR sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtrack_alg_a993271cb4275c99060c5c0e482b3479d}{read\+Ir}} ()
+\begin{DoxyCompactList}\small\item\em Read the IR sensor values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtrack_alg_a66270ae9aa4cb195b7edf30a9fdbc647}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the track algorithm to control the vehicle\textquotesingle{}s movement. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structtrack_alg_aa95874aabd3fb5b89fc4e9228976d5d9}{get\+\_\+edge\+Bool}} ()
+\begin{DoxyCompactList}\small\item\em Get the edge boolean value. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{structtrack_alg_ad701d9dfd3355be8f32eac8a824f0219}{get\+\_\+vehicle\+Move\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the vehicle\textquotesingle{}s movement mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to implement the track algorithm for the vehicle. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structtrack_alg_aa95874aabd3fb5b89fc4e9228976d5d9}\label{structtrack_alg_aa95874aabd3fb5b89fc4e9228976d5d9} 
+\index{trackAlg@{trackAlg}!get\_edgeBool@{get\_edgeBool}}
+\index{get\_edgeBool@{get\_edgeBool}!trackAlg@{trackAlg}}
+\doxysubsubsection{\texorpdfstring{get\_edgeBool()}{get\_edgeBool()}}
+{\footnotesize\ttfamily uint8\+\_\+t track\+Alg\+::get\+\_\+edge\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the edge boolean value. 
+
+\begin{DoxyReturn}{Returns}
+The edge boolean value. 
+\end{DoxyReturn}
+\Hypertarget{structtrack_alg_ad701d9dfd3355be8f32eac8a824f0219}\label{structtrack_alg_ad701d9dfd3355be8f32eac8a824f0219} 
+\index{trackAlg@{trackAlg}!get\_vehicleMoveMode@{get\_vehicleMoveMode}}
+\index{get\_vehicleMoveMode@{get\_vehicleMoveMode}!trackAlg@{trackAlg}}
+\doxysubsubsection{\texorpdfstring{get\_vehicleMoveMode()}{get\_vehicleMoveMode()}}
+{\footnotesize\ttfamily int8\+\_\+t track\+Alg\+::get\+\_\+vehicle\+Move\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the vehicle\textquotesingle{}s movement mode. 
+
+\begin{DoxyReturn}{Returns}
+The vehicle\textquotesingle{}s movement mode. 
+\end{DoxyReturn}
+\Hypertarget{structtrack_alg_a78d6d044ded7a2c7a848ed402dea3e05}\label{structtrack_alg_a78d6d044ded7a2c7a848ed402dea3e05} 
+\index{trackAlg@{trackAlg}!init@{init}}
+\index{init@{init}!trackAlg@{trackAlg}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void track\+Alg\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvehicle}{vehicle}} \texorpdfstring{$\ast$}{*}}]{\+\_\+veh,  }\item[{\mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ir }\end{DoxyParamCaption})}
+
+
+
+Initialize the track algorithm with the vehicle and IR sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+veh} & Pointer to the vehicle object. \\
+\hline
+{\em ir} & Pointer to the IR sensors object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structtrack_alg_a993271cb4275c99060c5c0e482b3479d}\label{structtrack_alg_a993271cb4275c99060c5c0e482b3479d} 
+\index{trackAlg@{trackAlg}!readIr@{readIr}}
+\index{readIr@{readIr}!trackAlg@{trackAlg}}
+\doxysubsubsection{\texorpdfstring{readIr()}{readIr()}}
+{\footnotesize\ttfamily void track\+Alg\+::read\+Ir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the IR sensor values. 
+
+\Hypertarget{structtrack_alg_a66270ae9aa4cb195b7edf30a9fdbc647}\label{structtrack_alg_a66270ae9aa4cb195b7edf30a9fdbc647} 
+\index{trackAlg@{trackAlg}!run@{run}}
+\index{run@{run}!trackAlg@{trackAlg}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void track\+Alg\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the track algorithm to control the vehicle\textquotesingle{}s movement. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/module/\mbox{\hyperlink{track_alg0_8h}{track\+Alg0.\+h}}\item 
+src/module/\mbox{\hyperlink{track_alg0_8cpp}{track\+Alg0.\+cpp}}\end{DoxyCompactItemize}

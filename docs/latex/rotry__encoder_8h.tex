@@ -1,0 +1,46 @@
+\doxysection{src/module/rotry\+\_\+encoder.h File Reference}
+\hypertarget{rotry__encoder_8h}{}\label{rotry__encoder_8h}\index{src/module/rotry\_encoder.h@{src/module/rotry\_encoder.h}}
+
+
+Rotary encoder implementation for pulse counting and angular velocity calculation.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}core/debug\+\_\+interface.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structencoder__data__t}{encoder\+\_\+data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to store encoder data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder$<$ pin, mode, edge $>$}}
+\begin{DoxyCompactList}\small\item\em Template class for a rotary encoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rotry__encoder_8h_adf445abfe1b77fa63f89e315ccc2f7f2}{BACKWARD}}~-\/1
+\item 
+\#define \mbox{\hyperlink{rotry__encoder_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}{FORWARD}}~1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rotary encoder implementation for pulse counting and angular velocity calculation. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{rotry__encoder_8h_adf445abfe1b77fa63f89e315ccc2f7f2}\label{rotry__encoder_8h_adf445abfe1b77fa63f89e315ccc2f7f2} 
+\index{rotry\_encoder.h@{rotry\_encoder.h}!BACKWARD@{BACKWARD}}
+\index{BACKWARD@{BACKWARD}!rotry\_encoder.h@{rotry\_encoder.h}}
+\doxysubsubsection{\texorpdfstring{BACKWARD}{BACKWARD}}
+{\footnotesize\ttfamily \#define BACKWARD~-\/1}
+
+\Hypertarget{rotry__encoder_8h_a6ddfdda7a062d10cff4a72b76b44aeb8}\label{rotry__encoder_8h_a6ddfdda7a062d10cff4a72b76b44aeb8} 
+\index{rotry\_encoder.h@{rotry\_encoder.h}!FORWARD@{FORWARD}}
+\index{FORWARD@{FORWARD}!rotry\_encoder.h@{rotry\_encoder.h}}
+\doxysubsubsection{\texorpdfstring{FORWARD}{FORWARD}}
+{\footnotesize\ttfamily \#define FORWARD~1}
+

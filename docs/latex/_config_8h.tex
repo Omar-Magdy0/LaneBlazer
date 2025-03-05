@@ -1,0 +1,649 @@
+\doxysection{src/\+Config.h File Reference}
+\hypertarget{_config_8h}{}\label{_config_8h}\index{src/Config.h@{src/Config.h}}
+{\ttfamily \#include "{}core/core.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_config_8h_aedac27103da1d7cbeb79d62837ce00d1}{DEBUG\+\_\+}}~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}
+\item 
+\#define \mbox{\hyperlink{_config_8h_ad7725bd9f76ca4bbdfdeb470ac223138}{DEBUG\+\_\+\+PORT}}~1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a78559644963e0c40e439edcad0b5ceb1}{DEBUG\+\_\+\+PORT\+\_\+\+BAUD}}~115200
+\item 
+\#define \mbox{\hyperlink{_config_8h_ae62ff9427e273ff6b4e56bf2c29af019}{DEBUG\+\_\+\+BUFFER\+\_\+\+SIZE}}~40
+\item 
+\#define \mbox{\hyperlink{_config_8h_a8e654728b92a3e3e7040c10d72e77868}{DEBUG\+\_\+\+PARSER}}~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}
+\item 
+\#define \mbox{\hyperlink{_config_8h_acf5b4949b2bcaa055cc03fa33274f6d9}{COMMAND\+\_\+\+BUFFER\+\_\+\+SIZE}}~32
+\item 
+\#define \mbox{\hyperlink{_config_8h_ab01f8d8a2f21be8263c9c5c79040fbe0}{COMMAND\+\_\+\+DELIMETER}}~"{} "{}
+\item 
+\#define \mbox{\hyperlink{_config_8h_acac5524ad06bc6aa2bdfe50ce1a13b78}{VEHICLE\+\_\+\+MOTION\+\_\+\+SYSTEM}}~DELTA\+\_\+\+DOUBLE\+\_\+\+FRONT\+\_\+\+NOSERVO
+\item 
+\#define \mbox{\hyperlink{_config_8h_aa4f6d78c3379d4e2400c73da22b55fff}{MOTOR\+\_\+\+DRIVER}}~L293D
+\item 
+\#define \mbox{\hyperlink{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef}{MOT\+\_\+\+PWM\+\_\+\+RES\+\_\+\+BITS}}~16
+\item 
+\#define \mbox{\hyperlink{_config_8h_a739dbf0bb567c3d3b32b208409aee17c}{MOT\+\_\+\+PWM\+\_\+\+RES\+\_\+\+FREQ}}~1000
+\item 
+\#define \mbox{\hyperlink{_config_8h_a56f8df6dc038007c4b249b89cccf896e}{FRW\+\_\+\+MOT\+\_\+\+D1}}~PB13
+\item 
+\#define \mbox{\hyperlink{_config_8h_acb5667a91742b49de4a757748359c4e5}{FRW\+\_\+\+MOT\+\_\+\+D2}}~PB12
+\item 
+\#define \mbox{\hyperlink{_config_8h_a73959f730faf1059344f4f9691872498}{FRW\+\_\+\+MOT\+\_\+\+EN}}~PB6
+\item 
+\#define \mbox{\hyperlink{_config_8h_ab36e41f801fd9e56a41c5636e18fb86a}{FRW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC}}~HIGH
+\item 
+\#define \mbox{\hyperlink{_config_8h_a7c7dbb3f00f83116029814cb55a19717}{FRW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC}}~HIGH
+\item 
+\#define \mbox{\hyperlink{_config_8h_a5fb6c08cf1ab66fc0abf4ab293c8f278}{FRW\+\_\+\+DCMOT\+\_\+\+DEADZONE}}~45
+\item 
+\#define \mbox{\hyperlink{_config_8h_aa54f832a909941a4feb868e6fe535ebe}{FLW\+\_\+\+MOT\+\_\+\+D1}}~PB14
+\item 
+\#define \mbox{\hyperlink{_config_8h_a59f1df165e31c5d70813ee2281de0e23}{FLW\+\_\+\+MOT\+\_\+\+D2}}~PB15
+\item 
+\#define \mbox{\hyperlink{_config_8h_a0d14f4fa787b518866eba168b70f18b1}{FLW\+\_\+\+MOT\+\_\+\+EN}}~PB7
+\item 
+\#define \mbox{\hyperlink{_config_8h_a05f46c8ba606b0376b0d5a81d3947881}{FLW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC}}~LOW
+\item 
+\#define \mbox{\hyperlink{_config_8h_ae8b89cc4a82d068e7293ca832231901f}{FLW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC}}~HIGH
+\item 
+\#define \mbox{\hyperlink{_config_8h_aab9b42e4bef22321f297c5ec3d08d25d}{FLW\+\_\+\+DCMOT\+\_\+\+DEADZONE}}~45
+\item 
+\#define \mbox{\hyperlink{_config_8h_a521489fd8fe7ea8737b70cc8243e58f5}{BACK\+\_\+\+WHEEL\+\_\+\+MOTOR}}~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}
+\item 
+\#define \mbox{\hyperlink{_config_8h_aabffe6475d71588feb2ed19a9fd69a6a}{BCW\+\_\+\+MOT\+\_\+\+D1}}~PB4
+\item 
+\#define \mbox{\hyperlink{_config_8h_a423fa20dcacb499d89bcb46a8e9a6ae8}{BCW\+\_\+\+MOT\+\_\+\+D2}}~PB5
+\item 
+\#define \mbox{\hyperlink{_config_8h_a345f560f434ab5a77744c16eb03f9701}{BCW\+\_\+\+MOT\+\_\+\+EN}}~PB1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a5541de6160df29795005392b006a902f}{BCW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC}}~HIGH
+\item 
+\#define \mbox{\hyperlink{_config_8h_acb83beadea5560d7e347c818ef59a1ef}{BCW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC}}~HIGH
+\item 
+\#define \mbox{\hyperlink{_config_8h_a57b5c649f517b5170a482604bd9c6b2d}{BCW\+\_\+\+DCMOT\+\_\+\+DEADZONE}}~45
+\item 
+\#define \mbox{\hyperlink{_config_8h_aa71be3f4e3be2bcb8a1481d12bf594f3}{ENCODER\+\_\+\+TIMEOUT\+\_\+\+US}}~500000
+\item 
+\#define \mbox{\hyperlink{_config_8h_a6b5205cdf406a98dc066003f2a4b7a51}{ENCODER\+\_\+\+MIN\+\_\+\+DT\+\_\+\+US}}~1000
+\item 
+\#define \mbox{\hyperlink{_config_8h_a9f5e166fb134cb3ed6cc38ac07267b3c}{MIN\+\_\+\+PULSES\+\_\+\+LS}}~10
+\item 
+\#define \mbox{\hyperlink{_config_8h_aaf71c08a71a93e40b05195d863942151}{FRW\+\_\+\+ENCODER}}~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}
+\item 
+\#define \mbox{\hyperlink{_config_8h_af883793566a35082164975d6075c4aec}{FRW\+\_\+\+ENCODER\+\_\+\+TYPE}}~PULSE
+\item 
+\#define \mbox{\hyperlink{_config_8h_a922478625d6c0128ca76794286f40d0b}{FRW\+\_\+\+ENC\+\_\+\+IN1}}~PB9
+\item 
+\#define \mbox{\hyperlink{_config_8h_a36b34a49eb223d16feb36981bb24f183}{FRW\+\_\+\+ENC\+\_\+\+IN2}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a97a862c35757f058b4985a7cfbcec292}{FRW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+DEF\+\_\+\+PINSTATE}}~INPUT\+\_\+\+PULLUP
+\item 
+\#define \mbox{\hyperlink{_config_8h_a768b8ee3bf477fcfcf1cce6dda4b5257}{FRW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+EDGE}}~RISING
+\item 
+\#define \mbox{\hyperlink{_config_8h_ab600a024e57b3ce88944c3c60689b263}{FRW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+LOGIC}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a0f03a16cf7aa456e8ee2c06cdecab535}{FRW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+DEF\+\_\+\+PINSTATE}}~INPUT\+\_\+\+PULLUP
+\item 
+\#define \mbox{\hyperlink{_config_8h_a2834e7f356bed356fdf28a551a631159}{FRW\+\_\+\+ENC\+\_\+\+PULSES\+\_\+\+PER\+\_\+\+REV}}~20
+\item 
+\#define \mbox{\hyperlink{_config_8h_ac4e7acc63c46e9635235ab12af0f1bc1}{FRW\+\_\+\+WHEEL\+\_\+\+DIAMETER\+\_\+\+MM}}~66
+\item 
+\#define \mbox{\hyperlink{_config_8h_a51a8a9485d62ea103fe532c2877cb008}{FLW\+\_\+\+ENCODER}}~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}
+\item 
+\#define \mbox{\hyperlink{_config_8h_a0cf81ed31303d9b794ae005863c18c2a}{FLW\+\_\+\+ENCODER\+\_\+\+TYPE}}~PULSE
+\item 
+\#define \mbox{\hyperlink{_config_8h_a5a7293f3a9537dc25a9b5bb42081adce}{FLW\+\_\+\+ENC\+\_\+\+IN1}}~PB8
+\item 
+\#define \mbox{\hyperlink{_config_8h_a76259e3e74b4db973a021bc4142ba449}{FLW\+\_\+\+ENC\+\_\+\+IN2}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a589cead62faf9220f754f135c237d6a0}{FLW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+DEF\+\_\+\+PINSTATE}}~INPUT\+\_\+\+PULLUP
+\item 
+\#define \mbox{\hyperlink{_config_8h_a7bce960008f41e64862a1d78654b5937}{FLW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+EDGE}}~RISING
+\item 
+\#define \mbox{\hyperlink{_config_8h_a37dc595d3c6a53520048abe0b7875903}{FLW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+LOGIC}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a83167e57d773fece8a5dcdcd009575c5}{FLW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+DEF\+\_\+\+PINSTATE}}~INPUT\+\_\+\+PULLUP
+\item 
+\#define \mbox{\hyperlink{_config_8h_a8c392bf4df936c097c8c626d1b681e30}{FLW\+\_\+\+ENC\+\_\+\+PULSES\+\_\+\+PER\+\_\+\+REV}}~20
+\item 
+\#define \mbox{\hyperlink{_config_8h_a4eb872a7ad722ca01ba63acfdc9f91bc}{FLW\+\_\+\+WHEEL\+\_\+\+DIAMETER\+\_\+\+MM}}~66
+\item 
+\#define \mbox{\hyperlink{_config_8h_a646b9617ad9de4358a158143af6c5094}{IR\+\_\+\+SENS\+\_\+\+NUM}}~4
+\item 
+\#define \mbox{\hyperlink{_config_8h_ac745e6805dcdbb99d7f6b45e63472310}{IR\+\_\+\+SENS\+\_\+\+TYPE}}~ANALOG
+\item 
+\#define \mbox{\hyperlink{_config_8h_ac9f5c7b6cd6cdbcb9bcde0e70d89e085}{IR\+\_\+\+SENS\+\_\+\+EDGE\+\_\+\+THRESH}}~200
+\item 
+\#define \mbox{\hyperlink{_config_8h_a44de9028715124b81511ec8253cc0392}{ANALOG\+\_\+\+RES\+\_\+\+BITS}}~12
+\item 
+\#define \mbox{\hyperlink{_config_8h_a5dc0330961590b07c630d23c612e4bb6}{FR\+\_\+\+IR\+\_\+\+IN}}~A2
+\item 
+\#define \mbox{\hyperlink{_config_8h_aaa3fd0c62e9a4f7d5ee5e5109b179e7f}{FL\+\_\+\+IR\+\_\+\+IN}}~A0
+\item 
+\#define \mbox{\hyperlink{_config_8h_ad9080b27e4a3900e4151842e2560eafd}{FFC\+\_\+\+IR\+\_\+\+IN}}~A1
+\item 
+\#define \mbox{\hyperlink{_config_8h_aa9cd2eaae3d5c89c36ebd4cccd174d4d}{WHEEL\+\_\+\+TRACK}}~145
+\item 
+\#define \mbox{\hyperlink{_config_8h_aaa2708101c6941b7f207ee73a7234350}{TRACK\+\_\+\+WIDTH}}~200
+\item 
+\#define \mbox{\hyperlink{_config_8h_a621ddd044f236c3cf7546c65f0c8336c}{FRWRD\+\_\+\+FS\+\_\+\+MOTPWR}}~\{70, 70, 70\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_a23e2ba34ec52e05e2e57278cf536157b}{FRWRD\+\_\+\+SS\+\_\+\+MOTPWR}}~\{50, 50, 50\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_ac0491146ea5ce55e7d2bb23fc07f9640}{STEER\+\_\+\+RIGHT\+\_\+\+MOTPWR}}~\{-\/90, 90, 60\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_a8d39d6a5b5a38a210c58ef38da94f694}{STEER\+\_\+\+LEFT\+\_\+\+MOTPWR}}~\{90, -\/90, 60\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_a1d260d18126afb20ea94635bdc332343}{HARDSTEER\+\_\+\+RIGHT\+\_\+\+MOTPWR}}~\{-\/90, 90, 60\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_aae6bfb56400908961c5e88d9d06560a0}{HARDSTEER\+\_\+\+LEFT\+\_\+\+MOTPWR}}~\{90, -\/90, 60\}
+\item 
+\#define \mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\+\_\+\+FREQ}}~25
+\item 
+\#define \mbox{\hyperlink{_config_8h_a5d16b75f9ef33832fa5e60aa8fba385c}{CNTRLLOOP\+\_\+\+VEHCNTRLLOOP\+\_\+\+FRATIO}}~1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a192712711adb68a28c5373bbc01150ff}{CNTRLLOOP\+\_\+\+VEHSENSORREAD\+\_\+\+FRATIO}}~25
+\item 
+\#define \mbox{\hyperlink{_config_8h_aebcbc5fe3334e9a8204c1a0dcc63a96b}{CNTRLLOOP\+\_\+\+TRACKALGRUN\+\_\+\+FRATIO}}~1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a397311f6af23cf7fae79f33ef753d0d5}{CNTRLLOOP\+\_\+\+TRACKALGSENSORREAD\+\_\+\+FRATIO}}~1
+\item 
+\#define \mbox{\hyperlink{_config_8h_af4dbadf3029463f830d809269297e4cb}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KP}}~0.\+25
+\item 
+\#define \mbox{\hyperlink{_config_8h_ac2bee582e37cde8c055c890bd3bf6302}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KI}}~0.\+1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a561f120f4aae1a733fc3aad0f2ae17d3}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KD}}~0.\+1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a12f0e9b198014ddda9e3f3e081a7b718}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+FF}}~0.\+1
+\item 
+\#define \mbox{\hyperlink{_config_8h_a81bfef7500924e21a7ab605bd60df33d}{L\+\_\+\+R\+\_\+\+MINOUTPUT\+\_\+\+THRESH}}~10
+\item 
+\#define \mbox{\hyperlink{_config_8h_a195c88fca02c67a9d2cd84d557928414}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+MAX\+\_\+\+POWER}}~100
+\item 
+\#define \mbox{\hyperlink{_config_8h_aee1f2d89372d391c3c37e7ad8899f966}{L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+MIN\+\_\+\+POWER}}~-\/100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_config_8h_a44de9028715124b81511ec8253cc0392}\label{_config_8h_a44de9028715124b81511ec8253cc0392} 
+\index{Config.h@{Config.h}!ANALOG\_RES\_BITS@{ANALOG\_RES\_BITS}}
+\index{ANALOG\_RES\_BITS@{ANALOG\_RES\_BITS}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{ANALOG\_RES\_BITS}{ANALOG\_RES\_BITS}}
+{\footnotesize\ttfamily \#define ANALOG\+\_\+\+RES\+\_\+\+BITS~12}
+
+\Hypertarget{_config_8h_a521489fd8fe7ea8737b70cc8243e58f5}\label{_config_8h_a521489fd8fe7ea8737b70cc8243e58f5} 
+\index{Config.h@{Config.h}!BACK\_WHEEL\_MOTOR@{BACK\_WHEEL\_MOTOR}}
+\index{BACK\_WHEEL\_MOTOR@{BACK\_WHEEL\_MOTOR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BACK\_WHEEL\_MOTOR}{BACK\_WHEEL\_MOTOR}}
+{\footnotesize\ttfamily \#define BACK\+\_\+\+WHEEL\+\_\+\+MOTOR~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}}
+
+\Hypertarget{_config_8h_a57b5c649f517b5170a482604bd9c6b2d}\label{_config_8h_a57b5c649f517b5170a482604bd9c6b2d} 
+\index{Config.h@{Config.h}!BCW\_DCMOT\_DEADZONE@{BCW\_DCMOT\_DEADZONE}}
+\index{BCW\_DCMOT\_DEADZONE@{BCW\_DCMOT\_DEADZONE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_DCMOT\_DEADZONE}{BCW\_DCMOT\_DEADZONE}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+DCMOT\+\_\+\+DEADZONE~45}
+
+\Hypertarget{_config_8h_aabffe6475d71588feb2ed19a9fd69a6a}\label{_config_8h_aabffe6475d71588feb2ed19a9fd69a6a} 
+\index{Config.h@{Config.h}!BCW\_MOT\_D1@{BCW\_MOT\_D1}}
+\index{BCW\_MOT\_D1@{BCW\_MOT\_D1}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_MOT\_D1}{BCW\_MOT\_D1}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+MOT\+\_\+\+D1~PB4}
+
+\Hypertarget{_config_8h_a423fa20dcacb499d89bcb46a8e9a6ae8}\label{_config_8h_a423fa20dcacb499d89bcb46a8e9a6ae8} 
+\index{Config.h@{Config.h}!BCW\_MOT\_D2@{BCW\_MOT\_D2}}
+\index{BCW\_MOT\_D2@{BCW\_MOT\_D2}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_MOT\_D2}{BCW\_MOT\_D2}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+MOT\+\_\+\+D2~PB5}
+
+\Hypertarget{_config_8h_a345f560f434ab5a77744c16eb03f9701}\label{_config_8h_a345f560f434ab5a77744c16eb03f9701} 
+\index{Config.h@{Config.h}!BCW\_MOT\_EN@{BCW\_MOT\_EN}}
+\index{BCW\_MOT\_EN@{BCW\_MOT\_EN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_MOT\_EN}{BCW\_MOT\_EN}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+MOT\+\_\+\+EN~PB1}
+
+\Hypertarget{_config_8h_acb83beadea5560d7e347c818ef59a1ef}\label{_config_8h_acb83beadea5560d7e347c818ef59a1ef} 
+\index{Config.h@{Config.h}!BCW\_MOT\_EN\_LOGIC@{BCW\_MOT\_EN\_LOGIC}}
+\index{BCW\_MOT\_EN\_LOGIC@{BCW\_MOT\_EN\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_MOT\_EN\_LOGIC}{BCW\_MOT\_EN\_LOGIC}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC~HIGH}
+
+\Hypertarget{_config_8h_a5541de6160df29795005392b006a902f}\label{_config_8h_a5541de6160df29795005392b006a902f} 
+\index{Config.h@{Config.h}!BCW\_MOT\_FRWRD\_D1\_LOGIC@{BCW\_MOT\_FRWRD\_D1\_LOGIC}}
+\index{BCW\_MOT\_FRWRD\_D1\_LOGIC@{BCW\_MOT\_FRWRD\_D1\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{BCW\_MOT\_FRWRD\_D1\_LOGIC}{BCW\_MOT\_FRWRD\_D1\_LOGIC}}
+{\footnotesize\ttfamily \#define BCW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC~HIGH}
+
+\Hypertarget{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}\label{_config_8h_ad90d4c4ebea43396f87791ded3dde7df} 
+\index{Config.h@{Config.h}!CNTRLLOOP\_FREQ@{CNTRLLOOP\_FREQ}}
+\index{CNTRLLOOP\_FREQ@{CNTRLLOOP\_FREQ}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{CNTRLLOOP\_FREQ}{CNTRLLOOP\_FREQ}}
+{\footnotesize\ttfamily \#define CNTRLLOOP\+\_\+\+FREQ~25}
+
+\Hypertarget{_config_8h_aebcbc5fe3334e9a8204c1a0dcc63a96b}\label{_config_8h_aebcbc5fe3334e9a8204c1a0dcc63a96b} 
+\index{Config.h@{Config.h}!CNTRLLOOP\_TRACKALGRUN\_FRATIO@{CNTRLLOOP\_TRACKALGRUN\_FRATIO}}
+\index{CNTRLLOOP\_TRACKALGRUN\_FRATIO@{CNTRLLOOP\_TRACKALGRUN\_FRATIO}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{CNTRLLOOP\_TRACKALGRUN\_FRATIO}{CNTRLLOOP\_TRACKALGRUN\_FRATIO}}
+{\footnotesize\ttfamily \#define CNTRLLOOP\+\_\+\+TRACKALGRUN\+\_\+\+FRATIO~1}
+
+\Hypertarget{_config_8h_a397311f6af23cf7fae79f33ef753d0d5}\label{_config_8h_a397311f6af23cf7fae79f33ef753d0d5} 
+\index{Config.h@{Config.h}!CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO@{CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO}}
+\index{CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO@{CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO}{CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO}}
+{\footnotesize\ttfamily \#define CNTRLLOOP\+\_\+\+TRACKALGSENSORREAD\+\_\+\+FRATIO~1}
+
+\Hypertarget{_config_8h_a5d16b75f9ef33832fa5e60aa8fba385c}\label{_config_8h_a5d16b75f9ef33832fa5e60aa8fba385c} 
+\index{Config.h@{Config.h}!CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO@{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO}}
+\index{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO@{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO}{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO}}
+{\footnotesize\ttfamily \#define CNTRLLOOP\+\_\+\+VEHCNTRLLOOP\+\_\+\+FRATIO~1}
+
+\Hypertarget{_config_8h_a192712711adb68a28c5373bbc01150ff}\label{_config_8h_a192712711adb68a28c5373bbc01150ff} 
+\index{Config.h@{Config.h}!CNTRLLOOP\_VEHSENSORREAD\_FRATIO@{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}}
+\index{CNTRLLOOP\_VEHSENSORREAD\_FRATIO@{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}}
+{\footnotesize\ttfamily \#define CNTRLLOOP\+\_\+\+VEHSENSORREAD\+\_\+\+FRATIO~25}
+
+\Hypertarget{_config_8h_acf5b4949b2bcaa055cc03fa33274f6d9}\label{_config_8h_acf5b4949b2bcaa055cc03fa33274f6d9} 
+\index{Config.h@{Config.h}!COMMAND\_BUFFER\_SIZE@{COMMAND\_BUFFER\_SIZE}}
+\index{COMMAND\_BUFFER\_SIZE@{COMMAND\_BUFFER\_SIZE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_BUFFER\_SIZE}{COMMAND\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define COMMAND\+\_\+\+BUFFER\+\_\+\+SIZE~32}
+
+\Hypertarget{_config_8h_ab01f8d8a2f21be8263c9c5c79040fbe0}\label{_config_8h_ab01f8d8a2f21be8263c9c5c79040fbe0} 
+\index{Config.h@{Config.h}!COMMAND\_DELIMETER@{COMMAND\_DELIMETER}}
+\index{COMMAND\_DELIMETER@{COMMAND\_DELIMETER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_DELIMETER}{COMMAND\_DELIMETER}}
+{\footnotesize\ttfamily \#define COMMAND\+\_\+\+DELIMETER~"{} "{}}
+
+\Hypertarget{_config_8h_aedac27103da1d7cbeb79d62837ce00d1}\label{_config_8h_aedac27103da1d7cbeb79d62837ce00d1} 
+\index{Config.h@{Config.h}!DEBUG\_@{DEBUG\_}}
+\index{DEBUG\_@{DEBUG\_}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_}{DEBUG\_}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}}
+
+\Hypertarget{_config_8h_ae62ff9427e273ff6b4e56bf2c29af019}\label{_config_8h_ae62ff9427e273ff6b4e56bf2c29af019} 
+\index{Config.h@{Config.h}!DEBUG\_BUFFER\_SIZE@{DEBUG\_BUFFER\_SIZE}}
+\index{DEBUG\_BUFFER\_SIZE@{DEBUG\_BUFFER\_SIZE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_BUFFER\_SIZE}{DEBUG\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+BUFFER\+\_\+\+SIZE~40}
+
+\Hypertarget{_config_8h_a8e654728b92a3e3e7040c10d72e77868}\label{_config_8h_a8e654728b92a3e3e7040c10d72e77868} 
+\index{Config.h@{Config.h}!DEBUG\_PARSER@{DEBUG\_PARSER}}
+\index{DEBUG\_PARSER@{DEBUG\_PARSER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PARSER}{DEBUG\_PARSER}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PARSER~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}}
+
+\Hypertarget{_config_8h_ad7725bd9f76ca4bbdfdeb470ac223138}\label{_config_8h_ad7725bd9f76ca4bbdfdeb470ac223138} 
+\index{Config.h@{Config.h}!DEBUG\_PORT@{DEBUG\_PORT}}
+\index{DEBUG\_PORT@{DEBUG\_PORT}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PORT}{DEBUG\_PORT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PORT~1}
+
+\Hypertarget{_config_8h_a78559644963e0c40e439edcad0b5ceb1}\label{_config_8h_a78559644963e0c40e439edcad0b5ceb1} 
+\index{Config.h@{Config.h}!DEBUG\_PORT\_BAUD@{DEBUG\_PORT\_BAUD}}
+\index{DEBUG\_PORT\_BAUD@{DEBUG\_PORT\_BAUD}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PORT\_BAUD}{DEBUG\_PORT\_BAUD}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PORT\+\_\+\+BAUD~115200}
+
+\Hypertarget{_config_8h_a6b5205cdf406a98dc066003f2a4b7a51}\label{_config_8h_a6b5205cdf406a98dc066003f2a4b7a51} 
+\index{Config.h@{Config.h}!ENCODER\_MIN\_DT\_US@{ENCODER\_MIN\_DT\_US}}
+\index{ENCODER\_MIN\_DT\_US@{ENCODER\_MIN\_DT\_US}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_MIN\_DT\_US}{ENCODER\_MIN\_DT\_US}}
+{\footnotesize\ttfamily \#define ENCODER\+\_\+\+MIN\+\_\+\+DT\+\_\+\+US~1000}
+
+\Hypertarget{_config_8h_aa71be3f4e3be2bcb8a1481d12bf594f3}\label{_config_8h_aa71be3f4e3be2bcb8a1481d12bf594f3} 
+\index{Config.h@{Config.h}!ENCODER\_TIMEOUT\_US@{ENCODER\_TIMEOUT\_US}}
+\index{ENCODER\_TIMEOUT\_US@{ENCODER\_TIMEOUT\_US}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_TIMEOUT\_US}{ENCODER\_TIMEOUT\_US}}
+{\footnotesize\ttfamily \#define ENCODER\+\_\+\+TIMEOUT\+\_\+\+US~500000}
+
+\Hypertarget{_config_8h_ad9080b27e4a3900e4151842e2560eafd}\label{_config_8h_ad9080b27e4a3900e4151842e2560eafd} 
+\index{Config.h@{Config.h}!FFC\_IR\_IN@{FFC\_IR\_IN}}
+\index{FFC\_IR\_IN@{FFC\_IR\_IN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FFC\_IR\_IN}{FFC\_IR\_IN}}
+{\footnotesize\ttfamily \#define FFC\+\_\+\+IR\+\_\+\+IN~A1}
+
+\Hypertarget{_config_8h_aaa3fd0c62e9a4f7d5ee5e5109b179e7f}\label{_config_8h_aaa3fd0c62e9a4f7d5ee5e5109b179e7f} 
+\index{Config.h@{Config.h}!FL\_IR\_IN@{FL\_IR\_IN}}
+\index{FL\_IR\_IN@{FL\_IR\_IN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FL\_IR\_IN}{FL\_IR\_IN}}
+{\footnotesize\ttfamily \#define FL\+\_\+\+IR\+\_\+\+IN~A0}
+
+\Hypertarget{_config_8h_aab9b42e4bef22321f297c5ec3d08d25d}\label{_config_8h_aab9b42e4bef22321f297c5ec3d08d25d} 
+\index{Config.h@{Config.h}!FLW\_DCMOT\_DEADZONE@{FLW\_DCMOT\_DEADZONE}}
+\index{FLW\_DCMOT\_DEADZONE@{FLW\_DCMOT\_DEADZONE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_DCMOT\_DEADZONE}{FLW\_DCMOT\_DEADZONE}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+DCMOT\+\_\+\+DEADZONE~45}
+
+\Hypertarget{_config_8h_a5a7293f3a9537dc25a9b5bb42081adce}\label{_config_8h_a5a7293f3a9537dc25a9b5bb42081adce} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN1@{FLW\_ENC\_IN1}}
+\index{FLW\_ENC\_IN1@{FLW\_ENC\_IN1}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN1}{FLW\_ENC\_IN1}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN1~PB8}
+
+\Hypertarget{_config_8h_a589cead62faf9220f754f135c237d6a0}\label{_config_8h_a589cead62faf9220f754f135c237d6a0} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN1\_DEF\_PINSTATE@{FLW\_ENC\_IN1\_DEF\_PINSTATE}}
+\index{FLW\_ENC\_IN1\_DEF\_PINSTATE@{FLW\_ENC\_IN1\_DEF\_PINSTATE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN1\_DEF\_PINSTATE}{FLW\_ENC\_IN1\_DEF\_PINSTATE}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+DEF\+\_\+\+PINSTATE~INPUT\+\_\+\+PULLUP}
+
+\Hypertarget{_config_8h_a7bce960008f41e64862a1d78654b5937}\label{_config_8h_a7bce960008f41e64862a1d78654b5937} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN1\_EDGE@{FLW\_ENC\_IN1\_EDGE}}
+\index{FLW\_ENC\_IN1\_EDGE@{FLW\_ENC\_IN1\_EDGE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN1\_EDGE}{FLW\_ENC\_IN1\_EDGE}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+EDGE~RISING}
+
+\Hypertarget{_config_8h_a76259e3e74b4db973a021bc4142ba449}\label{_config_8h_a76259e3e74b4db973a021bc4142ba449} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN2@{FLW\_ENC\_IN2}}
+\index{FLW\_ENC\_IN2@{FLW\_ENC\_IN2}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN2}{FLW\_ENC\_IN2}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN2~-\/1}
+
+\Hypertarget{_config_8h_a83167e57d773fece8a5dcdcd009575c5}\label{_config_8h_a83167e57d773fece8a5dcdcd009575c5} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN2\_DEF\_PINSTATE@{FLW\_ENC\_IN2\_DEF\_PINSTATE}}
+\index{FLW\_ENC\_IN2\_DEF\_PINSTATE@{FLW\_ENC\_IN2\_DEF\_PINSTATE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN2\_DEF\_PINSTATE}{FLW\_ENC\_IN2\_DEF\_PINSTATE}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+DEF\+\_\+\+PINSTATE~INPUT\+\_\+\+PULLUP}
+
+\Hypertarget{_config_8h_a37dc595d3c6a53520048abe0b7875903}\label{_config_8h_a37dc595d3c6a53520048abe0b7875903} 
+\index{Config.h@{Config.h}!FLW\_ENC\_IN2\_LOGIC@{FLW\_ENC\_IN2\_LOGIC}}
+\index{FLW\_ENC\_IN2\_LOGIC@{FLW\_ENC\_IN2\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_IN2\_LOGIC}{FLW\_ENC\_IN2\_LOGIC}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+LOGIC~-\/1}
+
+\Hypertarget{_config_8h_a8c392bf4df936c097c8c626d1b681e30}\label{_config_8h_a8c392bf4df936c097c8c626d1b681e30} 
+\index{Config.h@{Config.h}!FLW\_ENC\_PULSES\_PER\_REV@{FLW\_ENC\_PULSES\_PER\_REV}}
+\index{FLW\_ENC\_PULSES\_PER\_REV@{FLW\_ENC\_PULSES\_PER\_REV}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENC\_PULSES\_PER\_REV}{FLW\_ENC\_PULSES\_PER\_REV}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENC\+\_\+\+PULSES\+\_\+\+PER\+\_\+\+REV~20}
+
+\Hypertarget{_config_8h_a51a8a9485d62ea103fe532c2877cb008}\label{_config_8h_a51a8a9485d62ea103fe532c2877cb008} 
+\index{Config.h@{Config.h}!FLW\_ENCODER@{FLW\_ENCODER}}
+\index{FLW\_ENCODER@{FLW\_ENCODER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENCODER}{FLW\_ENCODER}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENCODER~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}}
+
+\Hypertarget{_config_8h_a0cf81ed31303d9b794ae005863c18c2a}\label{_config_8h_a0cf81ed31303d9b794ae005863c18c2a} 
+\index{Config.h@{Config.h}!FLW\_ENCODER\_TYPE@{FLW\_ENCODER\_TYPE}}
+\index{FLW\_ENCODER\_TYPE@{FLW\_ENCODER\_TYPE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_ENCODER\_TYPE}{FLW\_ENCODER\_TYPE}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+ENCODER\+\_\+\+TYPE~PULSE}
+
+\Hypertarget{_config_8h_aa54f832a909941a4feb868e6fe535ebe}\label{_config_8h_aa54f832a909941a4feb868e6fe535ebe} 
+\index{Config.h@{Config.h}!FLW\_MOT\_D1@{FLW\_MOT\_D1}}
+\index{FLW\_MOT\_D1@{FLW\_MOT\_D1}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_MOT\_D1}{FLW\_MOT\_D1}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+MOT\+\_\+\+D1~PB14}
+
+\Hypertarget{_config_8h_a59f1df165e31c5d70813ee2281de0e23}\label{_config_8h_a59f1df165e31c5d70813ee2281de0e23} 
+\index{Config.h@{Config.h}!FLW\_MOT\_D2@{FLW\_MOT\_D2}}
+\index{FLW\_MOT\_D2@{FLW\_MOT\_D2}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_MOT\_D2}{FLW\_MOT\_D2}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+MOT\+\_\+\+D2~PB15}
+
+\Hypertarget{_config_8h_a0d14f4fa787b518866eba168b70f18b1}\label{_config_8h_a0d14f4fa787b518866eba168b70f18b1} 
+\index{Config.h@{Config.h}!FLW\_MOT\_EN@{FLW\_MOT\_EN}}
+\index{FLW\_MOT\_EN@{FLW\_MOT\_EN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_MOT\_EN}{FLW\_MOT\_EN}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+MOT\+\_\+\+EN~PB7}
+
+\Hypertarget{_config_8h_ae8b89cc4a82d068e7293ca832231901f}\label{_config_8h_ae8b89cc4a82d068e7293ca832231901f} 
+\index{Config.h@{Config.h}!FLW\_MOT\_EN\_LOGIC@{FLW\_MOT\_EN\_LOGIC}}
+\index{FLW\_MOT\_EN\_LOGIC@{FLW\_MOT\_EN\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_MOT\_EN\_LOGIC}{FLW\_MOT\_EN\_LOGIC}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC~HIGH}
+
+\Hypertarget{_config_8h_a05f46c8ba606b0376b0d5a81d3947881}\label{_config_8h_a05f46c8ba606b0376b0d5a81d3947881} 
+\index{Config.h@{Config.h}!FLW\_MOT\_FRWRD\_D1\_LOGIC@{FLW\_MOT\_FRWRD\_D1\_LOGIC}}
+\index{FLW\_MOT\_FRWRD\_D1\_LOGIC@{FLW\_MOT\_FRWRD\_D1\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_MOT\_FRWRD\_D1\_LOGIC}{FLW\_MOT\_FRWRD\_D1\_LOGIC}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC~LOW}
+
+\Hypertarget{_config_8h_a4eb872a7ad722ca01ba63acfdc9f91bc}\label{_config_8h_a4eb872a7ad722ca01ba63acfdc9f91bc} 
+\index{Config.h@{Config.h}!FLW\_WHEEL\_DIAMETER\_MM@{FLW\_WHEEL\_DIAMETER\_MM}}
+\index{FLW\_WHEEL\_DIAMETER\_MM@{FLW\_WHEEL\_DIAMETER\_MM}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FLW\_WHEEL\_DIAMETER\_MM}{FLW\_WHEEL\_DIAMETER\_MM}}
+{\footnotesize\ttfamily \#define FLW\+\_\+\+WHEEL\+\_\+\+DIAMETER\+\_\+\+MM~66}
+
+\Hypertarget{_config_8h_a5dc0330961590b07c630d23c612e4bb6}\label{_config_8h_a5dc0330961590b07c630d23c612e4bb6} 
+\index{Config.h@{Config.h}!FR\_IR\_IN@{FR\_IR\_IN}}
+\index{FR\_IR\_IN@{FR\_IR\_IN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FR\_IR\_IN}{FR\_IR\_IN}}
+{\footnotesize\ttfamily \#define FR\+\_\+\+IR\+\_\+\+IN~A2}
+
+\Hypertarget{_config_8h_a5fb6c08cf1ab66fc0abf4ab293c8f278}\label{_config_8h_a5fb6c08cf1ab66fc0abf4ab293c8f278} 
+\index{Config.h@{Config.h}!FRW\_DCMOT\_DEADZONE@{FRW\_DCMOT\_DEADZONE}}
+\index{FRW\_DCMOT\_DEADZONE@{FRW\_DCMOT\_DEADZONE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_DCMOT\_DEADZONE}{FRW\_DCMOT\_DEADZONE}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+DCMOT\+\_\+\+DEADZONE~45}
+
+\Hypertarget{_config_8h_a922478625d6c0128ca76794286f40d0b}\label{_config_8h_a922478625d6c0128ca76794286f40d0b} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN1@{FRW\_ENC\_IN1}}
+\index{FRW\_ENC\_IN1@{FRW\_ENC\_IN1}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN1}{FRW\_ENC\_IN1}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN1~PB9}
+
+\Hypertarget{_config_8h_a97a862c35757f058b4985a7cfbcec292}\label{_config_8h_a97a862c35757f058b4985a7cfbcec292} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN1\_DEF\_PINSTATE@{FRW\_ENC\_IN1\_DEF\_PINSTATE}}
+\index{FRW\_ENC\_IN1\_DEF\_PINSTATE@{FRW\_ENC\_IN1\_DEF\_PINSTATE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN1\_DEF\_PINSTATE}{FRW\_ENC\_IN1\_DEF\_PINSTATE}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+DEF\+\_\+\+PINSTATE~INPUT\+\_\+\+PULLUP}
+
+\Hypertarget{_config_8h_a768b8ee3bf477fcfcf1cce6dda4b5257}\label{_config_8h_a768b8ee3bf477fcfcf1cce6dda4b5257} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN1\_EDGE@{FRW\_ENC\_IN1\_EDGE}}
+\index{FRW\_ENC\_IN1\_EDGE@{FRW\_ENC\_IN1\_EDGE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN1\_EDGE}{FRW\_ENC\_IN1\_EDGE}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN1\+\_\+\+EDGE~RISING}
+
+\Hypertarget{_config_8h_a36b34a49eb223d16feb36981bb24f183}\label{_config_8h_a36b34a49eb223d16feb36981bb24f183} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN2@{FRW\_ENC\_IN2}}
+\index{FRW\_ENC\_IN2@{FRW\_ENC\_IN2}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN2}{FRW\_ENC\_IN2}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN2~-\/1}
+
+\Hypertarget{_config_8h_a0f03a16cf7aa456e8ee2c06cdecab535}\label{_config_8h_a0f03a16cf7aa456e8ee2c06cdecab535} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN2\_DEF\_PINSTATE@{FRW\_ENC\_IN2\_DEF\_PINSTATE}}
+\index{FRW\_ENC\_IN2\_DEF\_PINSTATE@{FRW\_ENC\_IN2\_DEF\_PINSTATE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN2\_DEF\_PINSTATE}{FRW\_ENC\_IN2\_DEF\_PINSTATE}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+DEF\+\_\+\+PINSTATE~INPUT\+\_\+\+PULLUP}
+
+\Hypertarget{_config_8h_ab600a024e57b3ce88944c3c60689b263}\label{_config_8h_ab600a024e57b3ce88944c3c60689b263} 
+\index{Config.h@{Config.h}!FRW\_ENC\_IN2\_LOGIC@{FRW\_ENC\_IN2\_LOGIC}}
+\index{FRW\_ENC\_IN2\_LOGIC@{FRW\_ENC\_IN2\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_IN2\_LOGIC}{FRW\_ENC\_IN2\_LOGIC}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+IN2\+\_\+\+LOGIC~-\/1}
+
+\Hypertarget{_config_8h_a2834e7f356bed356fdf28a551a631159}\label{_config_8h_a2834e7f356bed356fdf28a551a631159} 
+\index{Config.h@{Config.h}!FRW\_ENC\_PULSES\_PER\_REV@{FRW\_ENC\_PULSES\_PER\_REV}}
+\index{FRW\_ENC\_PULSES\_PER\_REV@{FRW\_ENC\_PULSES\_PER\_REV}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENC\_PULSES\_PER\_REV}{FRW\_ENC\_PULSES\_PER\_REV}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENC\+\_\+\+PULSES\+\_\+\+PER\+\_\+\+REV~20}
+
+\Hypertarget{_config_8h_aaf71c08a71a93e40b05195d863942151}\label{_config_8h_aaf71c08a71a93e40b05195d863942151} 
+\index{Config.h@{Config.h}!FRW\_ENCODER@{FRW\_ENCODER}}
+\index{FRW\_ENCODER@{FRW\_ENCODER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENCODER}{FRW\_ENCODER}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENCODER~\mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}}
+
+\Hypertarget{_config_8h_af883793566a35082164975d6075c4aec}\label{_config_8h_af883793566a35082164975d6075c4aec} 
+\index{Config.h@{Config.h}!FRW\_ENCODER\_TYPE@{FRW\_ENCODER\_TYPE}}
+\index{FRW\_ENCODER\_TYPE@{FRW\_ENCODER\_TYPE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_ENCODER\_TYPE}{FRW\_ENCODER\_TYPE}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+ENCODER\+\_\+\+TYPE~PULSE}
+
+\Hypertarget{_config_8h_a56f8df6dc038007c4b249b89cccf896e}\label{_config_8h_a56f8df6dc038007c4b249b89cccf896e} 
+\index{Config.h@{Config.h}!FRW\_MOT\_D1@{FRW\_MOT\_D1}}
+\index{FRW\_MOT\_D1@{FRW\_MOT\_D1}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_MOT\_D1}{FRW\_MOT\_D1}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+MOT\+\_\+\+D1~PB13}
+
+\Hypertarget{_config_8h_acb5667a91742b49de4a757748359c4e5}\label{_config_8h_acb5667a91742b49de4a757748359c4e5} 
+\index{Config.h@{Config.h}!FRW\_MOT\_D2@{FRW\_MOT\_D2}}
+\index{FRW\_MOT\_D2@{FRW\_MOT\_D2}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_MOT\_D2}{FRW\_MOT\_D2}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+MOT\+\_\+\+D2~PB12}
+
+\Hypertarget{_config_8h_a73959f730faf1059344f4f9691872498}\label{_config_8h_a73959f730faf1059344f4f9691872498} 
+\index{Config.h@{Config.h}!FRW\_MOT\_EN@{FRW\_MOT\_EN}}
+\index{FRW\_MOT\_EN@{FRW\_MOT\_EN}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_MOT\_EN}{FRW\_MOT\_EN}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+MOT\+\_\+\+EN~PB6}
+
+\Hypertarget{_config_8h_a7c7dbb3f00f83116029814cb55a19717}\label{_config_8h_a7c7dbb3f00f83116029814cb55a19717} 
+\index{Config.h@{Config.h}!FRW\_MOT\_EN\_LOGIC@{FRW\_MOT\_EN\_LOGIC}}
+\index{FRW\_MOT\_EN\_LOGIC@{FRW\_MOT\_EN\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_MOT\_EN\_LOGIC}{FRW\_MOT\_EN\_LOGIC}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+MOT\+\_\+\+EN\+\_\+\+LOGIC~HIGH}
+
+\Hypertarget{_config_8h_ab36e41f801fd9e56a41c5636e18fb86a}\label{_config_8h_ab36e41f801fd9e56a41c5636e18fb86a} 
+\index{Config.h@{Config.h}!FRW\_MOT\_FRWRD\_D1\_LOGIC@{FRW\_MOT\_FRWRD\_D1\_LOGIC}}
+\index{FRW\_MOT\_FRWRD\_D1\_LOGIC@{FRW\_MOT\_FRWRD\_D1\_LOGIC}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_MOT\_FRWRD\_D1\_LOGIC}{FRW\_MOT\_FRWRD\_D1\_LOGIC}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+MOT\+\_\+\+FRWRD\+\_\+\+D1\+\_\+\+LOGIC~HIGH}
+
+\Hypertarget{_config_8h_ac4e7acc63c46e9635235ab12af0f1bc1}\label{_config_8h_ac4e7acc63c46e9635235ab12af0f1bc1} 
+\index{Config.h@{Config.h}!FRW\_WHEEL\_DIAMETER\_MM@{FRW\_WHEEL\_DIAMETER\_MM}}
+\index{FRW\_WHEEL\_DIAMETER\_MM@{FRW\_WHEEL\_DIAMETER\_MM}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRW\_WHEEL\_DIAMETER\_MM}{FRW\_WHEEL\_DIAMETER\_MM}}
+{\footnotesize\ttfamily \#define FRW\+\_\+\+WHEEL\+\_\+\+DIAMETER\+\_\+\+MM~66}
+
+\Hypertarget{_config_8h_a621ddd044f236c3cf7546c65f0c8336c}\label{_config_8h_a621ddd044f236c3cf7546c65f0c8336c} 
+\index{Config.h@{Config.h}!FRWRD\_FS\_MOTPWR@{FRWRD\_FS\_MOTPWR}}
+\index{FRWRD\_FS\_MOTPWR@{FRWRD\_FS\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_FS\_MOTPWR}{FRWRD\_FS\_MOTPWR}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+FS\+\_\+\+MOTPWR~\{70, 70, 70\}}
+
+\Hypertarget{_config_8h_a23e2ba34ec52e05e2e57278cf536157b}\label{_config_8h_a23e2ba34ec52e05e2e57278cf536157b} 
+\index{Config.h@{Config.h}!FRWRD\_SS\_MOTPWR@{FRWRD\_SS\_MOTPWR}}
+\index{FRWRD\_SS\_MOTPWR@{FRWRD\_SS\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_SS\_MOTPWR}{FRWRD\_SS\_MOTPWR}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+SS\+\_\+\+MOTPWR~\{50, 50, 50\}}
+
+\Hypertarget{_config_8h_aae6bfb56400908961c5e88d9d06560a0}\label{_config_8h_aae6bfb56400908961c5e88d9d06560a0} 
+\index{Config.h@{Config.h}!HARDSTEER\_LEFT\_MOTPWR@{HARDSTEER\_LEFT\_MOTPWR}}
+\index{HARDSTEER\_LEFT\_MOTPWR@{HARDSTEER\_LEFT\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{HARDSTEER\_LEFT\_MOTPWR}{HARDSTEER\_LEFT\_MOTPWR}}
+{\footnotesize\ttfamily \#define HARDSTEER\+\_\+\+LEFT\+\_\+\+MOTPWR~\{90, -\/90, 60\}}
+
+\Hypertarget{_config_8h_a1d260d18126afb20ea94635bdc332343}\label{_config_8h_a1d260d18126afb20ea94635bdc332343} 
+\index{Config.h@{Config.h}!HARDSTEER\_RIGHT\_MOTPWR@{HARDSTEER\_RIGHT\_MOTPWR}}
+\index{HARDSTEER\_RIGHT\_MOTPWR@{HARDSTEER\_RIGHT\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{HARDSTEER\_RIGHT\_MOTPWR}{HARDSTEER\_RIGHT\_MOTPWR}}
+{\footnotesize\ttfamily \#define HARDSTEER\+\_\+\+RIGHT\+\_\+\+MOTPWR~\{-\/90, 90, 60\}}
+
+\Hypertarget{_config_8h_ac9f5c7b6cd6cdbcb9bcde0e70d89e085}\label{_config_8h_ac9f5c7b6cd6cdbcb9bcde0e70d89e085} 
+\index{Config.h@{Config.h}!IR\_SENS\_EDGE\_THRESH@{IR\_SENS\_EDGE\_THRESH}}
+\index{IR\_SENS\_EDGE\_THRESH@{IR\_SENS\_EDGE\_THRESH}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{IR\_SENS\_EDGE\_THRESH}{IR\_SENS\_EDGE\_THRESH}}
+{\footnotesize\ttfamily \#define IR\+\_\+\+SENS\+\_\+\+EDGE\+\_\+\+THRESH~200}
+
+\Hypertarget{_config_8h_a646b9617ad9de4358a158143af6c5094}\label{_config_8h_a646b9617ad9de4358a158143af6c5094} 
+\index{Config.h@{Config.h}!IR\_SENS\_NUM@{IR\_SENS\_NUM}}
+\index{IR\_SENS\_NUM@{IR\_SENS\_NUM}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{IR\_SENS\_NUM}{IR\_SENS\_NUM}}
+{\footnotesize\ttfamily \#define IR\+\_\+\+SENS\+\_\+\+NUM~4}
+
+\Hypertarget{_config_8h_ac745e6805dcdbb99d7f6b45e63472310}\label{_config_8h_ac745e6805dcdbb99d7f6b45e63472310} 
+\index{Config.h@{Config.h}!IR\_SENS\_TYPE@{IR\_SENS\_TYPE}}
+\index{IR\_SENS\_TYPE@{IR\_SENS\_TYPE}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{IR\_SENS\_TYPE}{IR\_SENS\_TYPE}}
+{\footnotesize\ttfamily \#define IR\+\_\+\+SENS\+\_\+\+TYPE~ANALOG}
+
+\Hypertarget{_config_8h_a81bfef7500924e21a7ab605bd60df33d}\label{_config_8h_a81bfef7500924e21a7ab605bd60df33d} 
+\index{Config.h@{Config.h}!L\_R\_MINOUTPUT\_THRESH@{L\_R\_MINOUTPUT\_THRESH}}
+\index{L\_R\_MINOUTPUT\_THRESH@{L\_R\_MINOUTPUT\_THRESH}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_MINOUTPUT\_THRESH}{L\_R\_MINOUTPUT\_THRESH}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+MINOUTPUT\+\_\+\+THRESH~10}
+
+\Hypertarget{_config_8h_a12f0e9b198014ddda9e3f3e081a7b718}\label{_config_8h_a12f0e9b198014ddda9e3f3e081a7b718} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_FF@{L\_R\_WHEEL\_FF}}
+\index{L\_R\_WHEEL\_FF@{L\_R\_WHEEL\_FF}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_FF}{L\_R\_WHEEL\_FF}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+FF~0.\+1}
+
+\Hypertarget{_config_8h_a561f120f4aae1a733fc3aad0f2ae17d3}\label{_config_8h_a561f120f4aae1a733fc3aad0f2ae17d3} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_KD@{L\_R\_WHEEL\_KD}}
+\index{L\_R\_WHEEL\_KD@{L\_R\_WHEEL\_KD}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_KD}{L\_R\_WHEEL\_KD}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KD~0.\+1}
+
+\Hypertarget{_config_8h_ac2bee582e37cde8c055c890bd3bf6302}\label{_config_8h_ac2bee582e37cde8c055c890bd3bf6302} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_KI@{L\_R\_WHEEL\_KI}}
+\index{L\_R\_WHEEL\_KI@{L\_R\_WHEEL\_KI}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_KI}{L\_R\_WHEEL\_KI}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KI~0.\+1}
+
+\Hypertarget{_config_8h_af4dbadf3029463f830d809269297e4cb}\label{_config_8h_af4dbadf3029463f830d809269297e4cb} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_KP@{L\_R\_WHEEL\_KP}}
+\index{L\_R\_WHEEL\_KP@{L\_R\_WHEEL\_KP}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_KP}{L\_R\_WHEEL\_KP}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+KP~0.\+25}
+
+\Hypertarget{_config_8h_a195c88fca02c67a9d2cd84d557928414}\label{_config_8h_a195c88fca02c67a9d2cd84d557928414} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_MAX\_POWER@{L\_R\_WHEEL\_MAX\_POWER}}
+\index{L\_R\_WHEEL\_MAX\_POWER@{L\_R\_WHEEL\_MAX\_POWER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_MAX\_POWER}{L\_R\_WHEEL\_MAX\_POWER}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+MAX\+\_\+\+POWER~100}
+
+\Hypertarget{_config_8h_aee1f2d89372d391c3c37e7ad8899f966}\label{_config_8h_aee1f2d89372d391c3c37e7ad8899f966} 
+\index{Config.h@{Config.h}!L\_R\_WHEEL\_MIN\_POWER@{L\_R\_WHEEL\_MIN\_POWER}}
+\index{L\_R\_WHEEL\_MIN\_POWER@{L\_R\_WHEEL\_MIN\_POWER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{L\_R\_WHEEL\_MIN\_POWER}{L\_R\_WHEEL\_MIN\_POWER}}
+{\footnotesize\ttfamily \#define L\+\_\+\+R\+\_\+\+WHEEL\+\_\+\+MIN\+\_\+\+POWER~-\/100}
+
+\Hypertarget{_config_8h_a9f5e166fb134cb3ed6cc38ac07267b3c}\label{_config_8h_a9f5e166fb134cb3ed6cc38ac07267b3c} 
+\index{Config.h@{Config.h}!MIN\_PULSES\_LS@{MIN\_PULSES\_LS}}
+\index{MIN\_PULSES\_LS@{MIN\_PULSES\_LS}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{MIN\_PULSES\_LS}{MIN\_PULSES\_LS}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+PULSES\+\_\+\+LS~10}
+
+\Hypertarget{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef}\label{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef} 
+\index{Config.h@{Config.h}!MOT\_PWM\_RES\_BITS@{MOT\_PWM\_RES\_BITS}}
+\index{MOT\_PWM\_RES\_BITS@{MOT\_PWM\_RES\_BITS}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{MOT\_PWM\_RES\_BITS}{MOT\_PWM\_RES\_BITS}}
+{\footnotesize\ttfamily \#define MOT\+\_\+\+PWM\+\_\+\+RES\+\_\+\+BITS~16}
+
+\Hypertarget{_config_8h_a739dbf0bb567c3d3b32b208409aee17c}\label{_config_8h_a739dbf0bb567c3d3b32b208409aee17c} 
+\index{Config.h@{Config.h}!MOT\_PWM\_RES\_FREQ@{MOT\_PWM\_RES\_FREQ}}
+\index{MOT\_PWM\_RES\_FREQ@{MOT\_PWM\_RES\_FREQ}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{MOT\_PWM\_RES\_FREQ}{MOT\_PWM\_RES\_FREQ}}
+{\footnotesize\ttfamily \#define MOT\+\_\+\+PWM\+\_\+\+RES\+\_\+\+FREQ~1000}
+
+\Hypertarget{_config_8h_aa4f6d78c3379d4e2400c73da22b55fff}\label{_config_8h_aa4f6d78c3379d4e2400c73da22b55fff} 
+\index{Config.h@{Config.h}!MOTOR\_DRIVER@{MOTOR\_DRIVER}}
+\index{MOTOR\_DRIVER@{MOTOR\_DRIVER}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{MOTOR\_DRIVER}{MOTOR\_DRIVER}}
+{\footnotesize\ttfamily \#define MOTOR\+\_\+\+DRIVER~L293D}
+
+\Hypertarget{_config_8h_a8d39d6a5b5a38a210c58ef38da94f694}\label{_config_8h_a8d39d6a5b5a38a210c58ef38da94f694} 
+\index{Config.h@{Config.h}!STEER\_LEFT\_MOTPWR@{STEER\_LEFT\_MOTPWR}}
+\index{STEER\_LEFT\_MOTPWR@{STEER\_LEFT\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{STEER\_LEFT\_MOTPWR}{STEER\_LEFT\_MOTPWR}}
+{\footnotesize\ttfamily \#define STEER\+\_\+\+LEFT\+\_\+\+MOTPWR~\{90, -\/90, 60\}}
+
+\Hypertarget{_config_8h_ac0491146ea5ce55e7d2bb23fc07f9640}\label{_config_8h_ac0491146ea5ce55e7d2bb23fc07f9640} 
+\index{Config.h@{Config.h}!STEER\_RIGHT\_MOTPWR@{STEER\_RIGHT\_MOTPWR}}
+\index{STEER\_RIGHT\_MOTPWR@{STEER\_RIGHT\_MOTPWR}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{STEER\_RIGHT\_MOTPWR}{STEER\_RIGHT\_MOTPWR}}
+{\footnotesize\ttfamily \#define STEER\+\_\+\+RIGHT\+\_\+\+MOTPWR~\{-\/90, 90, 60\}}
+
+\Hypertarget{_config_8h_aaa2708101c6941b7f207ee73a7234350}\label{_config_8h_aaa2708101c6941b7f207ee73a7234350} 
+\index{Config.h@{Config.h}!TRACK\_WIDTH@{TRACK\_WIDTH}}
+\index{TRACK\_WIDTH@{TRACK\_WIDTH}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{TRACK\_WIDTH}{TRACK\_WIDTH}}
+{\footnotesize\ttfamily \#define TRACK\+\_\+\+WIDTH~200}
+
+\Hypertarget{_config_8h_acac5524ad06bc6aa2bdfe50ce1a13b78}\label{_config_8h_acac5524ad06bc6aa2bdfe50ce1a13b78} 
+\index{Config.h@{Config.h}!VEHICLE\_MOTION\_SYSTEM@{VEHICLE\_MOTION\_SYSTEM}}
+\index{VEHICLE\_MOTION\_SYSTEM@{VEHICLE\_MOTION\_SYSTEM}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{VEHICLE\_MOTION\_SYSTEM}{VEHICLE\_MOTION\_SYSTEM}}
+{\footnotesize\ttfamily \#define VEHICLE\+\_\+\+MOTION\+\_\+\+SYSTEM~DELTA\+\_\+\+DOUBLE\+\_\+\+FRONT\+\_\+\+NOSERVO}
+
+\Hypertarget{_config_8h_aa9cd2eaae3d5c89c36ebd4cccd174d4d}\label{_config_8h_aa9cd2eaae3d5c89c36ebd4cccd174d4d} 
+\index{Config.h@{Config.h}!WHEEL\_TRACK@{WHEEL\_TRACK}}
+\index{WHEEL\_TRACK@{WHEEL\_TRACK}!Config.h@{Config.h}}
+\doxysubsubsection{\texorpdfstring{WHEEL\_TRACK}{WHEEL\_TRACK}}
+{\footnotesize\ttfamily \#define WHEEL\+\_\+\+TRACK~145}
+

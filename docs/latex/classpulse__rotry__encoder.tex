@@ -1,0 +1,121 @@
+\doxysection{pulse\+\_\+rotry\+\_\+encoder\texorpdfstring{$<$}{<} pin, mode, edge \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classpulse__rotry__encoder}{}\label{classpulse__rotry__encoder}\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+
+
+Template class for a rotary encoder.  
+
+
+
+
+{\ttfamily \#include $<$rotry\+\_\+encoder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classpulse__rotry__encoder_a6f3b126fe7178c838fa3d2247e29f6ad}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the encoder pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classpulse__rotry__encoder_a2cf2a1a660ffabaef57ba96d274b1a99}{read\+\_\+pulses}} ()
+\begin{DoxyCompactList}\small\item\em Reads and resets the pulse count. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structencoder__data__t}{encoder\+\_\+data\+\_\+t}} \mbox{\hyperlink{classpulse__rotry__encoder_aeafd5b81faee34e4a23d4e70f5ef7a52}{get\+\_\+encoder\+\_\+data}} (uint16\+\_\+t pulses\+\_\+per\+\_\+rev, float check\+\_\+dt)
+\begin{DoxyCompactList}\small\item\em Computes encoder data (velocity and position). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpulse__rotry__encoder_ac44d01c6163d270b30cee54668bc8816}{encoder\+\_\+set\+\_\+direction}} (int8\+\_\+t dir)
+\begin{DoxyCompactList}\small\item\em Sets the rotation direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpulse__rotry__encoder_a8c8fdd20aa943ed53a75adccbdf51eca}{increment\+\_\+pulse}} ()
+\begin{DoxyCompactList}\small\item\em Increments the pulse count and updates timing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$\newline
+class pulse\+\_\+rotry\+\_\+encoder$<$ pin, mode, edge $>$}
+Template class for a rotary encoder. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em pin} & The pin number the encoder is attached to. \\
+\hline
+{\em mode} & The pin mode (INPUT, INPUT\+\_\+\+PULLUP, etc.). \\
+\hline
+{\em edge} & The triggering edge (RISING, FALLING, etc.). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpulse__rotry__encoder_ac44d01c6163d270b30cee54668bc8816}\label{classpulse__rotry__encoder_ac44d01c6163d270b30cee54668bc8816} 
+\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}!encoder\_set\_direction@{encoder\_set\_direction}}
+\index{encoder\_set\_direction@{encoder\_set\_direction}!pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+\doxysubsubsection{\texorpdfstring{encoder\_set\_direction()}{encoder\_set\_direction()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$ \\
+void \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder}}$<$ pin, mode, edge $>$\+::encoder\+\_\+set\+\_\+direction (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the rotation direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Direction (FORWARD or BACKWARD). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classpulse__rotry__encoder_aeafd5b81faee34e4a23d4e70f5ef7a52}\label{classpulse__rotry__encoder_aeafd5b81faee34e4a23d4e70f5ef7a52} 
+\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}!get\_encoder\_data@{get\_encoder\_data}}
+\index{get\_encoder\_data@{get\_encoder\_data}!pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+\doxysubsubsection{\texorpdfstring{get\_encoder\_data()}{get\_encoder\_data()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$ \\
+\mbox{\hyperlink{structencoder__data__t}{encoder\+\_\+data\+\_\+t}} \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder}}$<$ pin, mode, edge $>$\+::get\+\_\+encoder\+\_\+data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pulses\+\_\+per\+\_\+rev,  }\item[{float}]{check\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes encoder data (velocity and position). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pulses\+\_\+per\+\_\+rev} & Number of pulses per revolution. \\
+\hline
+{\em check\+\_\+dt} & Time interval for velocity calculation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encoder data structure. 
+\end{DoxyReturn}
+\Hypertarget{classpulse__rotry__encoder_a8c8fdd20aa943ed53a75adccbdf51eca}\label{classpulse__rotry__encoder_a8c8fdd20aa943ed53a75adccbdf51eca} 
+\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}!increment\_pulse@{increment\_pulse}}
+\index{increment\_pulse@{increment\_pulse}!pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+\doxysubsubsection{\texorpdfstring{increment\_pulse()}{increment\_pulse()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$ \\
+void \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder}}$<$ pin, mode, edge $>$\+::increment\+\_\+pulse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increments the pulse count and updates timing. 
+
+\Hypertarget{classpulse__rotry__encoder_a6f3b126fe7178c838fa3d2247e29f6ad}\label{classpulse__rotry__encoder_a6f3b126fe7178c838fa3d2247e29f6ad} 
+\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}!init@{init}}
+\index{init@{init}!pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$ \\
+void \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder}}$<$ pin, mode, edge $>$\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the encoder pin. 
+
+\Hypertarget{classpulse__rotry__encoder_a2cf2a1a660ffabaef57ba96d274b1a99}\label{classpulse__rotry__encoder_a2cf2a1a660ffabaef57ba96d274b1a99} 
+\index{pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}!read\_pulses@{read\_pulses}}
+\index{read\_pulses@{read\_pulses}!pulse\_rotry\_encoder$<$ pin, mode, edge $>$@{pulse\_rotry\_encoder$<$ pin, mode, edge $>$}}
+\doxysubsubsection{\texorpdfstring{read\_pulses()}{read\_pulses()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t pin, uint8\+\_\+t mode, uint8\+\_\+t edge$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\+\_\+rotry\+\_\+encoder}}$<$ pin, mode, edge $>$\+::read\+\_\+pulses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads and resets the pulse count. 
+
+\begin{DoxyReturn}{Returns}
+Signed pulse count based on direction. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/module/\mbox{\hyperlink{rotry__encoder_8h}{rotry\+\_\+encoder.\+h}}\end{DoxyCompactItemize}

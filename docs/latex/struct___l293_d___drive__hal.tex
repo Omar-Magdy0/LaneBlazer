@@ -1,0 +1,77 @@
+\doxysection{\+\_\+\+L293\+D\+\_\+\+Drive\+\_\+hal\texorpdfstring{$<$}{<} D1\+\_\+pin, D2\+\_\+pin, EN\+\_\+pin, D1\+\_\+logic, EN\+\_\+logic \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct___l293_d___drive__hal}{}\label{struct___l293_d___drive__hal}\index{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$@{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$}}
+
+
+Initializes the motor driver pins and sets up PWM resolution and frequency.  
+
+
+
+
+{\ttfamily \#include $<$L293\+D.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct___l293_d___drive__hal_adf743c08271db01031ea66e5015db5b9}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the motor driver pins and PWM settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct___l293_d___drive__hal_aa6ff14095d4ae9e692d75dd218589906}{set\+\_\+power}} (float pwr)
+\begin{DoxyCompactList}\small\item\em Sets the power level for the motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$uint8\+\_\+t D1\+\_\+pin, uint8\+\_\+t D2\+\_\+pin, uint8\+\_\+t EN\+\_\+pin, uint8\+\_\+t D1\+\_\+logic, uint8\+\_\+t EN\+\_\+logic$>$\newline
+struct \+\_\+\+L293\+D\+\_\+\+Drive\+\_\+hal$<$ D1\+\_\+pin, D2\+\_\+pin, EN\+\_\+pin, D1\+\_\+logic, EN\+\_\+logic $>$}
+Initializes the motor driver pins and sets up PWM resolution and frequency. 
+
+This function configures the specified pins (D1\+\_\+pin, D2\+\_\+pin, EN\+\_\+pin) as output pins. It also sets the PWM resolution and frequency for the motor driver.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D1\+\_\+pin} & The pin number for the first direction control. \\
+\hline
+{\em D2\+\_\+pin} & The pin number for the second direction control. \\
+\hline
+{\em EN\+\_\+pin} & The pin number for the enable control. \\
+\hline
+{\em D1\+\_\+logic} & The logic level for the first direction control. \\
+\hline
+{\em EN\+\_\+logic} & The logic level for the enable control. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct___l293_d___drive__hal_adf743c08271db01031ea66e5015db5b9}\label{struct___l293_d___drive__hal_adf743c08271db01031ea66e5015db5b9} 
+\index{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$@{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$}!init@{init}}
+\index{init@{init}!\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$@{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t D1\+\_\+pin, uint8\+\_\+t D2\+\_\+pin, uint8\+\_\+t EN\+\_\+pin, uint8\+\_\+t D1\+\_\+logic, uint8\+\_\+t EN\+\_\+logic$>$ \\
+void \mbox{\hyperlink{struct___l293_d___drive__hal}{\+\_\+\+L293\+D\+\_\+\+Drive\+\_\+hal}}$<$ D1\+\_\+pin, D2\+\_\+pin, EN\+\_\+pin, D1\+\_\+logic, EN\+\_\+logic $>$\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the motor driver pins and PWM settings. 
+
+This function sets the specified pins as output and configures the PWM resolution and frequency for motor control. \Hypertarget{struct___l293_d___drive__hal_aa6ff14095d4ae9e692d75dd218589906}\label{struct___l293_d___drive__hal_aa6ff14095d4ae9e692d75dd218589906} 
+\index{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$@{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$}!set\_power@{set\_power}}
+\index{set\_power@{set\_power}!\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$@{\_L293D\_Drive\_hal$<$ D1\_pin, D2\_pin, EN\_pin, D1\_logic, EN\_logic $>$}}
+\doxysubsubsection{\texorpdfstring{set\_power()}{set\_power()}}
+{\footnotesize\ttfamily template$<$uint8\+\_\+t D1\+\_\+pin, uint8\+\_\+t D2\+\_\+pin, uint8\+\_\+t EN\+\_\+pin, uint8\+\_\+t D1\+\_\+logic, uint8\+\_\+t EN\+\_\+logic$>$ \\
+void \mbox{\hyperlink{struct___l293_d___drive__hal}{\+\_\+\+L293\+D\+\_\+\+Drive\+\_\+hal}}$<$ D1\+\_\+pin, D2\+\_\+pin, EN\+\_\+pin, D1\+\_\+logic, EN\+\_\+logic $>$\+::set\+\_\+power (\begin{DoxyParamCaption}\item[{float}]{pwr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the power level for the motor. 
+
+This function controls the motor\textquotesingle{}s power level by setting the direction and the PWM value based on the input power percentage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwr} & The power level as a percentage (-\/100 to 100). Positive values indicate forward direction, and negative values indicate reverse direction. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/module/\mbox{\hyperlink{_l293_d_8h}{L293\+D.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\doxysection{debug\+\_\+interface.\+h}
+\hypertarget{debug__interface_8h_source}{}\label{debug__interface_8h_source}\index{src/core/debug\_interface.h@{src/core/debug\_interface.h}}
+\mbox{\hyperlink{debug__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{../Config.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ UART1\ 1}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_)\ \&\&\ ENABLED(DEBUG\_)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ DEBUG\_PORT\ ==\ UART1}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ var\_type>}
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_out(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ var\_type\ var)}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{char}\ f\_str[\mbox{\hyperlink{_config_8h_ae62ff9427e273ff6b4e56bf2c29af019}{DEBUG\_BUFFER\_SIZE}}];}
+\DoxyCodeLine{00035\ \ \ \ \ snprintf(f\_str,\ \mbox{\hyperlink{_config_8h_ae62ff9427e273ff6b4e56bf2c29af019}{DEBUG\_BUFFER\_SIZE}},\ str,\ var);}
+\DoxyCodeLine{00036\ \ \ \ \ Serial1.println(f\_str);}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_out(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str)}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ Serial1.println(str);}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#else\ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ debug\_out(c)\ do\ \{\}\ while\ (0)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ debug\_out(c,\ d)\ do\ \{\}\ while\ (0)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

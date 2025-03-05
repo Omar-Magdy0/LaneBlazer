@@ -1,0 +1,246 @@
+\doxysection{src/core/simple\+\_\+parser.h File Reference}
+\hypertarget{simple__parser_8h}{}\label{simple__parser_8h}\index{src/core/simple\_parser.h@{src/core/simple\_parser.h}}
+{\ttfamily \#include "{}core.\+h"{}}\newline
+{\ttfamily \#include "{}Config.\+h"{}}\newline
+{\ttfamily \#include "{}core/delta\+\_\+sys.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}}
+\item 
+class \mbox{\hyperlink{classsimple__parser}{simple\+\_\+parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4}{PARSER\+\_\+\+FEEDBACK\+\_\+\+SIZE}}~12
+\item 
+\#define \mbox{\hyperlink{simple__parser_8h_af591ff2eae2fac1a696c32fa62707a07}{GCODE\+\_\+\+MAX\+\_\+\+ARG\+\_\+\+COUNT}}~26
+\item 
+\#define \mbox{\hyperlink{simple__parser_8h_a9bad30b6f174e4d17f9987660ba11664}{LETTER\+\_\+\+NUM}}(c)~(c -\/\textquotesingle{}A\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{simple__parser_8h_a16fbd95c180b2b0b9c54178d9c5878f7}{IS\+\_\+\+VALID\+\_\+\+LETTER}}(c)~(c $<$= \textquotesingle{}Z\textquotesingle{} \&\& c $>$= \textquotesingle{}A\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{simple__parser_8h_ae9ff7366de50c2d26a7894a9fefa8798}{OK}}(c)~do\{strcpy(c, "{}OK"{}); return c;\}while(0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_aa752720351d0f3bc3259934f05cbc21b}{G0}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_ac40bacec1548e75966536aa1d36a59a5}{G1}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a3a435c4c3a1f2393668ba0760fd1c7d9}{G2}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a12ae59dd968a0a3eb87f1dc2441e5bdd}{G3}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a6bf7a668514d727579136558301da03b}{G4}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_aa5a6fcb1f811ed8fb93a0369e941e308}{G5}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a51df0d15328a699da36395d410932234}{G6}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a77888384fbd408b2b8550f79a5a412b8}{G7}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_ac22ddcb2997b56704870b36691bf1fa3}{G8}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_af2cf30254615c9e7267a517023116c68}{G9}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a19ea499dca63323ae62f67bc11ac15ba}{M0}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a85d2badc8794493b9081bba87d25d35e}{M1}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_ab4b9bd1e1beae1e64fa960c5add61890}{M2}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a1e65bb192c57b3753ecdf8916dceefb9}{M3}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a70b0e1df3c19ace6e13fc345ceca178b}{M4}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_adff68d63c115f188e430501f63e5d420}{M5}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a2a6ec7e7b9e65c8d226b74233a5a6390}{M6}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_aaa238ce18cb101a5c9b06549cf810309}{M7}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_af51a128c944dac09002b937a1587b87b}{M8}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a339bf8134b93ace8261af2d715f3906f}{M9}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{simple__parser_8h_a8be82b6090d067ac0cbefce09e8daa7d}{G900}} (\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{simple__parser_8h_aa014034b3f43cf01b3ab984d63fc9ba3}{parser\+\_\+feedback}} \mbox{[}\mbox{\hyperlink{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4}{PARSER\+\_\+\+FEEDBACK\+\_\+\+SIZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{simple__parser_8h_af591ff2eae2fac1a696c32fa62707a07}\label{simple__parser_8h_af591ff2eae2fac1a696c32fa62707a07} 
+\index{simple\_parser.h@{simple\_parser.h}!GCODE\_MAX\_ARG\_COUNT@{GCODE\_MAX\_ARG\_COUNT}}
+\index{GCODE\_MAX\_ARG\_COUNT@{GCODE\_MAX\_ARG\_COUNT}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{GCODE\_MAX\_ARG\_COUNT}{GCODE\_MAX\_ARG\_COUNT}}
+{\footnotesize\ttfamily \#define GCODE\+\_\+\+MAX\+\_\+\+ARG\+\_\+\+COUNT~26}
+
+\Hypertarget{simple__parser_8h_a16fbd95c180b2b0b9c54178d9c5878f7}\label{simple__parser_8h_a16fbd95c180b2b0b9c54178d9c5878f7} 
+\index{simple\_parser.h@{simple\_parser.h}!IS\_VALID\_LETTER@{IS\_VALID\_LETTER}}
+\index{IS\_VALID\_LETTER@{IS\_VALID\_LETTER}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{IS\_VALID\_LETTER}{IS\_VALID\_LETTER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+VALID\+\_\+\+LETTER(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(c $<$= \textquotesingle{}Z\textquotesingle{} \&\& c $>$= \textquotesingle{}A\textquotesingle{})}
+
+\Hypertarget{simple__parser_8h_a9bad30b6f174e4d17f9987660ba11664}\label{simple__parser_8h_a9bad30b6f174e4d17f9987660ba11664} 
+\index{simple\_parser.h@{simple\_parser.h}!LETTER\_NUM@{LETTER\_NUM}}
+\index{LETTER\_NUM@{LETTER\_NUM}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{LETTER\_NUM}{LETTER\_NUM}}
+{\footnotesize\ttfamily \#define LETTER\+\_\+\+NUM(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(c -\/\textquotesingle{}A\textquotesingle{})}
+
+\Hypertarget{simple__parser_8h_ae9ff7366de50c2d26a7894a9fefa8798}\label{simple__parser_8h_ae9ff7366de50c2d26a7894a9fefa8798} 
+\index{simple\_parser.h@{simple\_parser.h}!OK@{OK}}
+\index{OK@{OK}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{OK}{OK}}
+{\footnotesize\ttfamily \#define OK(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~do\{strcpy(c, "{}OK"{}); return c;\}while(0)}
+
+\Hypertarget{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4}\label{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4} 
+\index{simple\_parser.h@{simple\_parser.h}!PARSER\_FEEDBACK\_SIZE@{PARSER\_FEEDBACK\_SIZE}}
+\index{PARSER\_FEEDBACK\_SIZE@{PARSER\_FEEDBACK\_SIZE}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{PARSER\_FEEDBACK\_SIZE}{PARSER\_FEEDBACK\_SIZE}}
+{\footnotesize\ttfamily \#define PARSER\+\_\+\+FEEDBACK\+\_\+\+SIZE~12}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{simple__parser_8h_aa752720351d0f3bc3259934f05cbc21b}\label{simple__parser_8h_aa752720351d0f3bc3259934f05cbc21b} 
+\index{simple\_parser.h@{simple\_parser.h}!G0@{G0}}
+\index{G0@{G0}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G0()}{G0()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_ac40bacec1548e75966536aa1d36a59a5}\label{simple__parser_8h_ac40bacec1548e75966536aa1d36a59a5} 
+\index{simple\_parser.h@{simple\_parser.h}!G1@{G1}}
+\index{G1@{G1}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G1()}{G1()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a3a435c4c3a1f2393668ba0760fd1c7d9}\label{simple__parser_8h_a3a435c4c3a1f2393668ba0760fd1c7d9} 
+\index{simple\_parser.h@{simple\_parser.h}!G2@{G2}}
+\index{G2@{G2}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G2()}{G2()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a12ae59dd968a0a3eb87f1dc2441e5bdd}\label{simple__parser_8h_a12ae59dd968a0a3eb87f1dc2441e5bdd} 
+\index{simple\_parser.h@{simple\_parser.h}!G3@{G3}}
+\index{G3@{G3}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G3()}{G3()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a6bf7a668514d727579136558301da03b}\label{simple__parser_8h_a6bf7a668514d727579136558301da03b} 
+\index{simple\_parser.h@{simple\_parser.h}!G4@{G4}}
+\index{G4@{G4}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G4()}{G4()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_aa5a6fcb1f811ed8fb93a0369e941e308}\label{simple__parser_8h_aa5a6fcb1f811ed8fb93a0369e941e308} 
+\index{simple\_parser.h@{simple\_parser.h}!G5@{G5}}
+\index{G5@{G5}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G5()}{G5()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a51df0d15328a699da36395d410932234}\label{simple__parser_8h_a51df0d15328a699da36395d410932234} 
+\index{simple\_parser.h@{simple\_parser.h}!G6@{G6}}
+\index{G6@{G6}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G6()}{G6()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G6 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a77888384fbd408b2b8550f79a5a412b8}\label{simple__parser_8h_a77888384fbd408b2b8550f79a5a412b8} 
+\index{simple\_parser.h@{simple\_parser.h}!G7@{G7}}
+\index{G7@{G7}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G7()}{G7()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G7 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_ac22ddcb2997b56704870b36691bf1fa3}\label{simple__parser_8h_ac22ddcb2997b56704870b36691bf1fa3} 
+\index{simple\_parser.h@{simple\_parser.h}!G8@{G8}}
+\index{G8@{G8}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G8()}{G8()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_af2cf30254615c9e7267a517023116c68}\label{simple__parser_8h_af2cf30254615c9e7267a517023116c68} 
+\index{simple\_parser.h@{simple\_parser.h}!G9@{G9}}
+\index{G9@{G9}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G9()}{G9()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G9 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a8be82b6090d067ac0cbefce09e8daa7d}\label{simple__parser_8h_a8be82b6090d067ac0cbefce09e8daa7d} 
+\index{simple\_parser.h@{simple\_parser.h}!G900@{G900}}
+\index{G900@{G900}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{G900()}{G900()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} G900 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a19ea499dca63323ae62f67bc11ac15ba}\label{simple__parser_8h_a19ea499dca63323ae62f67bc11ac15ba} 
+\index{simple\_parser.h@{simple\_parser.h}!M0@{M0}}
+\index{M0@{M0}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M0()}{M0()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a85d2badc8794493b9081bba87d25d35e}\label{simple__parser_8h_a85d2badc8794493b9081bba87d25d35e} 
+\index{simple\_parser.h@{simple\_parser.h}!M1@{M1}}
+\index{M1@{M1}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M1()}{M1()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_ab4b9bd1e1beae1e64fa960c5add61890}\label{simple__parser_8h_ab4b9bd1e1beae1e64fa960c5add61890} 
+\index{simple\_parser.h@{simple\_parser.h}!M2@{M2}}
+\index{M2@{M2}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M2()}{M2()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a1e65bb192c57b3753ecdf8916dceefb9}\label{simple__parser_8h_a1e65bb192c57b3753ecdf8916dceefb9} 
+\index{simple\_parser.h@{simple\_parser.h}!M3@{M3}}
+\index{M3@{M3}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M3()}{M3()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a70b0e1df3c19ace6e13fc345ceca178b}\label{simple__parser_8h_a70b0e1df3c19ace6e13fc345ceca178b} 
+\index{simple\_parser.h@{simple\_parser.h}!M4@{M4}}
+\index{M4@{M4}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M4()}{M4()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_adff68d63c115f188e430501f63e5d420}\label{simple__parser_8h_adff68d63c115f188e430501f63e5d420} 
+\index{simple\_parser.h@{simple\_parser.h}!M5@{M5}}
+\index{M5@{M5}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M5()}{M5()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a2a6ec7e7b9e65c8d226b74233a5a6390}\label{simple__parser_8h_a2a6ec7e7b9e65c8d226b74233a5a6390} 
+\index{simple\_parser.h@{simple\_parser.h}!M6@{M6}}
+\index{M6@{M6}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M6()}{M6()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M6 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_aaa238ce18cb101a5c9b06549cf810309}\label{simple__parser_8h_aaa238ce18cb101a5c9b06549cf810309} 
+\index{simple\_parser.h@{simple\_parser.h}!M7@{M7}}
+\index{M7@{M7}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M7()}{M7()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M7 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_af51a128c944dac09002b937a1587b87b}\label{simple__parser_8h_af51a128c944dac09002b937a1587b87b} 
+\index{simple\_parser.h@{simple\_parser.h}!M8@{M8}}
+\index{M8@{M8}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M8()}{M8()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+\Hypertarget{simple__parser_8h_a339bf8134b93ace8261af2d715f3906f}\label{simple__parser_8h_a339bf8134b93ace8261af2d715f3906f} 
+\index{simple\_parser.h@{simple\_parser.h}!M9@{M9}}
+\index{M9@{M9}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{M9()}{M9()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} M9 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_code_args__t}{GCode\+Args\+\_\+t}} \&}]{args }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{simple__parser_8h_aa014034b3f43cf01b3ab984d63fc9ba3}\label{simple__parser_8h_aa014034b3f43cf01b3ab984d63fc9ba3} 
+\index{simple\_parser.h@{simple\_parser.h}!parser\_feedback@{parser\_feedback}}
+\index{parser\_feedback@{parser\_feedback}!simple\_parser.h@{simple\_parser.h}}
+\doxysubsubsection{\texorpdfstring{parser\_feedback}{parser\_feedback}}
+{\footnotesize\ttfamily char parser\+\_\+feedback\mbox{[}\mbox{\hyperlink{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4}{PARSER\+\_\+\+FEEDBACK\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

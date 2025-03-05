@@ -1,0 +1,92 @@
+\doxysection{delta\+\_\+sys.\+h}
+\hypertarget{delta__sys_8h_source}{}\label{delta__sys_8h_source}\index{src/core/delta\_sys.h@{src/core/delta\_sys.h}}
+\mbox{\hyperlink{delta__sys_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l293_d_8h}{module/L293D.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rotry__encoder_8h}{module/rotry\_encoder.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_i_d_8h}{PID.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{core.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{debug__interface_8h}{debug\_interface.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{../Config.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ V\_TO\_ANGULAR\_V\_DIA(V,\ D)(2*V/D)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ANGULAR\_V\_TO\_V\_DIA(w,\ D)(w*D/2)}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structveh__state__t_a448635b6da3b4481338997a07fdeca79}{veh\_spd\_mm\_s}}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structveh__state__t_a54b7760c088c4f637fc6e1bc4eb748ef}{veh\_angV\_rad\_s}}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structveh__state__t_a04f7acbd375af29fa3df972ea49464ff}{flw\_angV\_rad\_s}}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structveh__state__t_acb8cc5db4a7f470d3ec36845a0cc00d4}{frw\_angV\_rad\_s}}\ =\ 0;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmotor__power__t}{motor\_power\_t}}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structmotor__power__t_a0ff43654aec6333646b6313d9c609092}{frw\_MOT\_power}}\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structmotor__power__t_add8a0db58b35cfc6541d101db36af9a1}{flw\_MOT\_power}}\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structmotor__power__t_abb78cfbc63365b33955baa6c4be41c40}{bcw\_MOT\_power}}\ =\ 0;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}{veh\_cntrlType}}\{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a547859f1d0b544c3984da6bc77f70368}{MOTORPOWER}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a6131a3ff9f5e89352e6d0a74597a8a3b}{WHEELSPEED}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a3c71a3d2c529bc22e2264fe8ab3424df}{SPD\_ANGV}}}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\_rotry\_encoder<FRW\_ENC\_IN1,\ FRW\_ENC\_IN1\_DEF\_PINSTATE,\ FRW\_ENC\_IN1\_EDGE>}}\ frw\_ENC;\ \textcolor{comment}{//encoder\ right\_wheel}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ FRW\_ENC\_IRQ()\{}
+\DoxyCodeLine{00034\ \ \ \ \ frw\_ENC.increment\_pulse();}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classpulse__rotry__encoder}{pulse\_rotry\_encoder<FLW\_ENC\_IN1,\ FLW\_ENC\_IN1\_DEF\_PINSTATE,\ FLW\_ENC\_IN1\_EDGE>}}\ flw\_ENC;\ \textcolor{comment}{//encoder\ left\_wheel}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ FLW\_ENC\_IRQ()\{}
+\DoxyCodeLine{00039\ \ \ \ \ flw\_ENC.increment\_pulse();}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classvehicle}{vehicle}}\{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct___l293_d___drive__hal}{\_L293D\_Drive\_hal<FRW\_MOT\_D1,\ FRW\_MOT\_D2,\ FRW\_MOT\_EN,\ FRW\_MOT\_FRWRD\_D1\_LOGIC,\ FRW\_MOT\_EN\_LOGIC>}}\ frw\_MOT;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct___l293_d___drive__hal}{\_L293D\_Drive\_hal<FLW\_MOT\_D1,\ FLW\_MOT\_D2,\ FLW\_MOT\_EN,\ FLW\_MOT\_FRWRD\_D1\_LOGIC,\ FLW\_MOT\_EN\_LOGIC>}}\ flw\_MOT;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{struct___l293_d___drive__hal}{\_L293D\_Drive\_hal<BCW\_MOT\_D1,\ BCW\_MOT\_D2,\ BCW\_MOT\_EN,\ BCW\_MOT\_FRWRD\_D1\_LOGIC,\ BCW\_MOT\_EN\_LOGIC>}}\ bcw\_MOT;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}\ flw\_spd\_pid\ =\ \mbox{\hyperlink{class_p_i_d}{PID}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_af4dbadf3029463f830d809269297e4cb}{L\_R\_WHEEL\_KP}},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_ac2bee582e37cde8c055c890bd3bf6302}{L\_R\_WHEEL\_KI}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_a561f120f4aae1a733fc3aad0f2ae17d3}{L\_R\_WHEEL\_KD}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_config_8h_a195c88fca02c67a9d2cd84d557928414}{L\_R\_WHEEL\_MAX\_POWER}}\ -\/\ \mbox{\hyperlink{_config_8h_aab9b42e4bef22321f297c5ec3d08d25d}{FLW\_DCMOT\_DEADZONE}}),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core_8h_adf24ef2161000098be51568eda6b7629}{FREQ\_TO\_PTIME}}(\mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\_FREQ}}/\mbox{\hyperlink{_config_8h_a192712711adb68a28c5373bbc01150ff}{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}})}
+\DoxyCodeLine{00055\ \ \ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_p_i_d}{PID}}\ frw\_spd\_pid\ =\ \mbox{\hyperlink{class_p_i_d}{PID}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_af4dbadf3029463f830d809269297e4cb}{L\_R\_WHEEL\_KP}},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_ac2bee582e37cde8c055c890bd3bf6302}{L\_R\_WHEEL\_KI}},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_config_8h_a561f120f4aae1a733fc3aad0f2ae17d3}{L\_R\_WHEEL\_KD}},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_config_8h_a195c88fca02c67a9d2cd84d557928414}{L\_R\_WHEEL\_MAX\_POWER}}\ -\/\ \mbox{\hyperlink{_config_8h_a5fb6c08cf1ab66fc0abf4ab293c8f278}{FRW\_DCMOT\_DEADZONE}}),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core_8h_adf24ef2161000098be51568eda6b7629}{FREQ\_TO\_PTIME}}(\mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\_FREQ}}/\mbox{\hyperlink{_config_8h_a192712711adb68a28c5373bbc01150ff}{CNTRLLOOP\_VEHSENSORREAD\_FRATIO}})}
+\DoxyCodeLine{00064\ \ \ \ \ );}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ control\_loop\_freq\ =\ \mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\_FREQ}}/\mbox{\hyperlink{_config_8h_a5d16b75f9ef33832fa5e60aa8fba385c}{CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO}};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\ current;}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\ target;}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structmotor__power__t}{motor\_power\_t}}\ motor\_power;}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}{veh\_cntrlType}}\ control\_type;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ kinematic\_map();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_a940a9c9ca5c7171f883bf4ac17206748}{vehicle\_init}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_a9801cbab5e2edd920a280a69069e3777}{sensors\_read}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_afb5c70950f0eb8ef541fdd596c9b48fc}{control\_loop}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_a62342acafe4f4c6606c12ed2622f4c35}{motorPower\_update}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\ \mbox{\hyperlink{classvehicle_a75d0472ef41a2797017f1d9f4b7789ca}{get\_vehicleState}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\ \mbox{\hyperlink{classvehicle_af8f4512066d723115894af2f3882bc34}{get\_vehicleTarget}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{structmotor__power__t}{motor\_power\_t}}\ \mbox{\hyperlink{classvehicle_a3e8f28dfd940756a195f7279fde5a63f}{get\_motorPower}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_ac65ac266aff373d8da4de5d5d8cd00ed}{set\_vehicleTarget}}(\mbox{\hyperlink{structveh__state__t}{veh\_state\_t}}\ \&\_target,\ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}{veh\_cntrlType}}\ \_control\_type);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classvehicle_a5e689ef6896448297864ca8da51b63af}{set\_motorPower}}(\mbox{\hyperlink{structmotor__power__t}{motor\_power\_t}}\ \&\_motorPowers);}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvehicle}{vehicle}}\ *\mbox{\hyperlink{delta__sys_8h_a31e9d9396e049c1eb1a673fb3ad9e319}{vehicle\_laneBlazer}};}
+
+\end{DoxyCode}
