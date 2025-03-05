@@ -1,0 +1,140 @@
+\doxysection{Config.\+h}
+\hypertarget{_config_8h_source}{}\label{_config_8h_source}\index{src/Config.h@{src/Config.h}}
+\mbox{\hyperlink{_config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{core/core.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//COMMUNICATION}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ DEBUG\_\ CONF\_ENABLE}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_)\ \&\&\ ENABLED(DEBUG\_)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PORT\ 1\ \ \ \ \ \ \ \ }\textcolor{comment}{//1\ for\ UART1,\ \ 2\ for\ UART2....,\ TCP\ so\ on}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PORT\_BAUD\ 115200\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//IF\ choice\ was\ a\ UART}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BUFFER\_SIZE\ 40}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PARSER\ CONF\_ENABLE}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COMMAND\_BUFFER\_SIZE\ 32}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COMMAND\_DELIMETER\ "{}\ "{}}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//COMMUNICATION\ END}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//MOTION\ SYSTEM\ DEFINED\ (USEFull\ for\ later\ configuration)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ VEHICLE\_MOTION\_SYSTEM\ DELTA\_DOUBLE\_FRONT\_NOSERVO}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//MOTOR\ DRIVER\ TYPE}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MOTOR\_DRIVER\ L293D}}
+\DoxyCodeLine{00023\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/PINS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*-\/-\/-\/MOTOR-\/-\/-\/*/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MOT\_PWM\_RES\_BITS\ 16}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MOT\_PWM\_RES\_FREQ\ 1000}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//FRW\_MOT\ :\ FRONT\ RIGHT\ WHEEL\ MOTOR\ \ \ ;\ \ \ D1\ and\ D2\ :\ direction\ Control\ Pins\ \ ;\ EN\ :\ Enable\ Pin\ \ ;\ Logic\ :\ Logic\ for\ certain\ state}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ FRW\_MOT\_D1\ PB13}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ FRW\_MOT\_D2\ PB12}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ FRW\_MOT\_EN\ PB6\ \ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ FRW\_MOT\_FRWRD\_D1\_LOGIC\ HIGH\ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FRW\_MOT\_EN\_LOGIC\ HIGH\ \ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ FRW\_DCMOT\_DEADZONE\ 45\ }\textcolor{comment}{//40\%\ duty\ cycle\ deadzone}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//FLW\_MOT\ :\ FRONT\ LEFT\ WHEEL\ MOTOR\ \ \ ;\ \ \ D1\ and\ D2\ :\ direction\ Control\ Pins\ \ ;\ EN\ :\ Enable\ Pin\ \ ;\ Logic\ :\ Logic\ for\ certain\ state}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ FLW\_MOT\_D1\ PB14}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ FLW\_MOT\_D2\ PB15}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ FLW\_MOT\_EN\ PB7}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ FLW\_MOT\_FRWRD\_D1\_LOGIC\ LOW}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ FLW\_MOT\_EN\_LOGIC\ HIGH\ \ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ FLW\_DCMOT\_DEADZONE\ 45\ }\textcolor{comment}{//duty\ cycle\ deadzone}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//BCW\_MOT\ :\ BACK\ CENTER\ WHEEL\ MOTOR\ \ \ ;\ \ \ D1\ and\ D2\ :\ direction\ Control\ Pins\ \ ;\ EN\ :\ Enable\ Pin\ \ ;\ Logic\ :\ Logic\ for\ certain\ state}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BACK\_WHEEL\_MOTOR\ CONF\_ENABLE}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ defined(BACK\_WHEEL\_MOTOR)\ \&\&\ ENABLED(BACK\_WHEEL\_MOTOR)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BCW\_MOT\_D1\ PB4}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BCW\_MOT\_D2\ PB5}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BCW\_MOT\_EN\ PB1}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ BCW\_MOT\_FRWRD\_D1\_LOGIC\ HIGH\ \ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BCW\_MOT\_EN\_LOGIC\ HIGH\ \ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BCW\_DCMOT\_DEADZONE\ 45\ }\textcolor{comment}{//duty\ cycle\ deadzone}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \textcolor{comment}{/*-\/-\/-\/ENCODER-\/-\/-\/*/}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ ENCODER\_TIMEOUT\_US\ 500000}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ ENCODER\_MIN\_DT\_US\ 1000}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ MIN\_PULSES\_LS\ 10\ }\textcolor{comment}{//\ Minimum\ number\ of\ pulses\ to\ consider\ high-\/speed\ mode\ for\ encoder\ calculations}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//FRW\_ENC:\ FRONT\ RIGHT\ WHEEL\ ENCODER\ \ \ ;\ \ \ IN1\ and\ IN2\ :\ ENCODER\ OUTPUTS\ \ ;\ LOGIC\ :\ THE\ DETECTION\ OF\ PULSE\ ON\ RISING\ vs\ FALLING\ EDGE\ \ ,\ RISING\ =\ 1,\ FALLING\ =\ 0}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ FRW\_ENCODER\ CONF\_ENABLE}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ defined(FRW\_ENCODER)\ \&\&\ ENABLED(FRW\_ENCODER)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ FRW\_ENCODER\_TYPE\ PULSE}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN1\ PB9\ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN2\ -\/1}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN1\_DEF\_PINSTATE\ INPUT\_PULLUP}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN1\_EDGE\ RISING}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN2\_LOGIC\ -\/1}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_IN2\_DEF\_PINSTATE\ INPUT\_PULLUP}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ FRW\_ENC\_PULSES\_PER\_REV\ 20}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ FRW\_WHEEL\_DIAMETER\_MM\ 66}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//FLW\_ENC:\ FRONT\ LEFT\ WHEEL\ ENCODER\ \ \ ;\ \ \ IN1\ and\ IN2\ :\ ENCODER\ OUTPUTS\ \ ;\ LOGIC\ :\ THE\ DETECTION\ OF\ PULSE\ ON\ RISING\ vs\ FALLING\ EDGE\ \ ,\ RISING\ =\ 1,\ FALLING\ =\ 0}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ FLW\_ENCODER\ CONF\_ENABLE}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#if\ defined(FLW\_ENCODER)\ \&\&\ ENABLED(FLW\_ENCODER)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ FLW\_ENCODER\_TYPE\ PULSE}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN1\ PB8\ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN2\ -\/1}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN1\_DEF\_PINSTATE\ INPUT\_PULLUP}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN1\_EDGE\ RISING}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN2\_LOGIC\ -\/1}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_IN2\_DEF\_PINSTATE\ INPUT\_PULLUP}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ FLW\_ENC\_PULSES\_PER\_REV\ 20}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ FLW\_WHEEL\_DIAMETER\_MM\ 66}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//BCW\_ENC:\ BACK\ CENTER\ WHEEL\ ENCODER\ \ \ ;\ \ \ IN1\ and\ IN2\ :\ ENCODER\ OUTPUTS\ \ ;\ LOGIC\ :\ THE\ DETECTION\ OF\ PULSE\ ON\ RISING\ vs\ FALLING\ EDGE\ \ ,\ RISING\ =\ 1,\ FALLING\ =\ 0}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\#define\ BCW\_ENCODER\ CONF\_ENABLE}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#if\ defined(BCW\_ENCODER)\ \&\&\ ENABLED(BCW\_ENCODER)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ENCODER\_TYPE\ VOID}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN1\ -\/1\ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN2\ -\/1}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN1\_LOGIC\ }\textcolor{comment}{//THE\ DETECTION\ OF\ PULSE\ ON\ RISING\ vs\ FALLING\ EDGE\ \ ,\ RISING\ =\ 1,\ FALLING\ =\ 0}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN1\_DEF\_PINSTATE\ INPUT\_PULLUP}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN1\_EDGE\ RISING}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN2\_LOGIC}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_IN2\_DEF\_PINSTATE\ INPUT\_PULLUP\ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ BCW\_ENC\_PULSES\_PER\_REV\ 20}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ BCW\_WHEEL\_DIAMETER\_MM\ 66}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/IR\_SENSORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ IR\_SENS\_NUM\ 4}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ IR\_SENS\_TYPE\ ANALOG\ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ IR\_SENS\_EDGE\_THRESH\ 200}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ ANALOG\_RES\_BITS\ 12}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ FR\_IR\_IN\ A2\ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ FL\_IR\_IN\ A0\ }\textcolor{comment}{//pin}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ FFC\_IR\_IN\ A1}\textcolor{comment}{//pin}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*************\ Vehicle\ and\ TRACK\ dimensions\ ****************/}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ WHEEL\_TRACK\ 145}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ TRACK\_WIDTH\ 200}}
+\DoxyCodeLine{00111\ \textcolor{comment}{/************\ TRACK\ ALG0\ ***********************************\ */}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//RIGHT\ LEFT\ BACKWARDCENTER\ \ \ \ for\ delta\ vehicles}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ FRWRD\_FS\_MOTPWR\ \{70,\ 70,\ 70\}}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ FRWRD\_SS\_MOTPWR\ \{50,\ 50,\ 50\}}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ STEER\_RIGHT\_MOTPWR\ \{-\/90,\ 90,\ 60\}}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ STEER\_LEFT\_MOTPWR\ \{90,\ -\/90,\ 60\}}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ HARDSTEER\_RIGHT\_MOTPWR\ \{-\/90,\ 90,\ 60\}}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ HARDSTEER\_LEFT\_MOTPWR\ \{90,\ -\/90,\ 60\}}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{/**************Control\ **************/}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ CNTRLLOOP\_FREQ\ 25}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ CNTRLLOOP\_VEHCNTRLLOOP\_FRATIO\ 1}\textcolor{comment}{//(ControlLoopFreq/VehicleControlLoopFreq)\ ratio}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ CNTRLLOOP\_VEHSENSORREAD\_FRATIO\ 25\ }\textcolor{comment}{//(ControlLoopFreq/SensorReadFreq)\ ratio}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ CNTRLLOOP\_TRACKALGRUN\_FRATIO\ 1\ }\textcolor{comment}{//(ControlLoopFreq/TrackAlgFreq)\ ratio}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ CNTRLLOOP\_TRACKALGSENSORREAD\_FRATIO\ 1\ }\textcolor{comment}{//(ControlLoopFreq/IRSensorReadFreq)\ ratio}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_KP\ 0.25}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_KI\ 0.1}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_KD\ 0.1}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_FF\ 0.1\ }\textcolor{comment}{//FEEDFORWARD\ TERM}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ L\_R\_MINOUTPUT\_THRESH\ 10}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_MAX\_POWER\ 100\ }\textcolor{comment}{//MAXIMUM\ duty\ for\ controlling\ the\ DC\ motors}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ L\_R\_WHEEL\_MIN\_POWER\ -\/100\ }\textcolor{comment}{//MINIMUM\ duty\ for\ controlling\ the\ DC\ motors}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ }
+
+\end{DoxyCode}

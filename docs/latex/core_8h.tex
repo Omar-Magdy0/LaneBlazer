@@ -1,0 +1,153 @@
+\doxysection{src/core/core.h File Reference}
+\hypertarget{core_8h}{}\label{core_8h}\index{src/core/core.h@{src/core/core.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{core_8h_abe15cb6b3f99758688fdd0c5dd1864ec}{SBI32}}(reg,  bit)~((reg) \texorpdfstring{$\vert$}{|}= (1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_ae619b6f6c967ef490169f6310d757467}{CBI32}}(reg,  bit)~((reg) \&= \texorpdfstring{$\sim$}{\string~}(1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_a6225e347bbe9683f993ad93e534e1a89}{BV32}}(reg,  bit)~((reg) \& (1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_ad8e90dc03edf98c89c55f15ed208f9a9}{SBI}}(reg,  bit)~((reg) \texorpdfstring{$\vert$}{|}= (1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_adead60525f52e9187f04e988dabb620d}{CBI}}(reg,  bit)~((reg) \&= \texorpdfstring{$\sim$}{\string~}(1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_a33eab6478387c5823fba3a1af5982642}{BV}}(reg,  bit)~((reg) \& (1U $<$$<$ (bit)))
+\item 
+\#define \mbox{\hyperlink{core_8h_af301feb151667517400bf7e24cf03bdf}{ENABLED}}(x)~((x)==1)
+\item 
+\#define \mbox{\hyperlink{core_8h_a094d10108674c212cb20f038797f7f84}{DISABLED}}(x)~((x)==0)
+\item 
+\#define \mbox{\hyperlink{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}{CONF\+\_\+\+ENABLE}}~1
+\item 
+\#define \mbox{\hyperlink{core_8h_a876c6359b8ae504de3523d9a00121c9c}{CONF\+\_\+\+DISABLE}}~0
+\item 
+\#define \mbox{\hyperlink{core_8h_adf24ef2161000098be51568eda6b7629}{FREQ\+\_\+\+TO\+\_\+\+PTIME}}(F)~(1.\+0/F)
+\item 
+\#define \mbox{\hyperlink{core_8h_a8687c17b33405b47d478619da9d16103}{PTIME\+\_\+\+TO\+\_\+\+FREQ}}(PT)~(1.\+0/PT)
+\item 
+\#define \mbox{\hyperlink{core_8h_ae6aa8c01acd9200934a132168c361b0c}{SIGN}}(n)~((n$>$0)?1\+:((n$<$0)?-\/1\+:0))
+\item 
+\#define \mbox{\hyperlink{core_8h_a877792595c7ef3dd6bae7ebcc3e89c98}{SIGN\+\_\+\+NBIAS}}(n)~((n$<$=0)?-\/1\+:1)
+\item 
+\#define \mbox{\hyperlink{core_8h_a8d09767e16118fa490a9d51104830548}{SIGN\+\_\+\+PBIAS}}(n)~((n$>$=0)?1\+:-\/1)
+\item 
+\#define \mbox{\hyperlink{core_8h_aefb7723e1092c450754ef6c07922b1bf}{POSITIVE}}~1
+\item 
+\#define \mbox{\hyperlink{core_8h_ae8da539b402ed6856028a0a60240bbff}{NEGATIVE}}~-\/1
+\item 
+\#define \mbox{\hyperlink{core_8h_ac328e551bde3d39b6d7b8cc9e048d941}{ZERO}}~0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{core_8h_a33eab6478387c5823fba3a1af5982642}\label{core_8h_a33eab6478387c5823fba3a1af5982642} 
+\index{core.h@{core.h}!BV@{BV}}
+\index{BV@{BV}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{BV}{BV}}
+{\footnotesize\ttfamily \#define BV(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \& (1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_a6225e347bbe9683f993ad93e534e1a89}\label{core_8h_a6225e347bbe9683f993ad93e534e1a89} 
+\index{core.h@{core.h}!BV32@{BV32}}
+\index{BV32@{BV32}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{BV32}{BV32}}
+{\footnotesize\ttfamily \#define BV32(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \& (1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_adead60525f52e9187f04e988dabb620d}\label{core_8h_adead60525f52e9187f04e988dabb620d} 
+\index{core.h@{core.h}!CBI@{CBI}}
+\index{CBI@{CBI}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{CBI}{CBI}}
+{\footnotesize\ttfamily \#define CBI(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \&= \texorpdfstring{$\sim$}{\string~}(1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_ae619b6f6c967ef490169f6310d757467}\label{core_8h_ae619b6f6c967ef490169f6310d757467} 
+\index{core.h@{core.h}!CBI32@{CBI32}}
+\index{CBI32@{CBI32}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{CBI32}{CBI32}}
+{\footnotesize\ttfamily \#define CBI32(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \&= \texorpdfstring{$\sim$}{\string~}(1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_a876c6359b8ae504de3523d9a00121c9c}\label{core_8h_a876c6359b8ae504de3523d9a00121c9c} 
+\index{core.h@{core.h}!CONF\_DISABLE@{CONF\_DISABLE}}
+\index{CONF\_DISABLE@{CONF\_DISABLE}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{CONF\_DISABLE}{CONF\_DISABLE}}
+{\footnotesize\ttfamily \#define CONF\+\_\+\+DISABLE~0}
+
+\Hypertarget{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1}\label{core_8h_a5692b8a5488cc3a8c37b682b88ef76f1} 
+\index{core.h@{core.h}!CONF\_ENABLE@{CONF\_ENABLE}}
+\index{CONF\_ENABLE@{CONF\_ENABLE}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{CONF\_ENABLE}{CONF\_ENABLE}}
+{\footnotesize\ttfamily \#define CONF\+\_\+\+ENABLE~1}
+
+\Hypertarget{core_8h_a094d10108674c212cb20f038797f7f84}\label{core_8h_a094d10108674c212cb20f038797f7f84} 
+\index{core.h@{core.h}!DISABLED@{DISABLED}}
+\index{DISABLED@{DISABLED}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{DISABLED}{DISABLED}}
+{\footnotesize\ttfamily \#define DISABLED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x)==0)}
+
+\Hypertarget{core_8h_af301feb151667517400bf7e24cf03bdf}\label{core_8h_af301feb151667517400bf7e24cf03bdf} 
+\index{core.h@{core.h}!ENABLED@{ENABLED}}
+\index{ENABLED@{ENABLED}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{ENABLED}{ENABLED}}
+{\footnotesize\ttfamily \#define ENABLED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x)==1)}
+
+\Hypertarget{core_8h_adf24ef2161000098be51568eda6b7629}\label{core_8h_adf24ef2161000098be51568eda6b7629} 
+\index{core.h@{core.h}!FREQ\_TO\_PTIME@{FREQ\_TO\_PTIME}}
+\index{FREQ\_TO\_PTIME@{FREQ\_TO\_PTIME}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{FREQ\_TO\_PTIME}{FREQ\_TO\_PTIME}}
+{\footnotesize\ttfamily \#define FREQ\+\_\+\+TO\+\_\+\+PTIME(\begin{DoxyParamCaption}\item[{}]{F }\end{DoxyParamCaption})~(1.\+0/F)}
+
+\Hypertarget{core_8h_ae8da539b402ed6856028a0a60240bbff}\label{core_8h_ae8da539b402ed6856028a0a60240bbff} 
+\index{core.h@{core.h}!NEGATIVE@{NEGATIVE}}
+\index{NEGATIVE@{NEGATIVE}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{NEGATIVE}{NEGATIVE}}
+{\footnotesize\ttfamily \#define NEGATIVE~-\/1}
+
+\Hypertarget{core_8h_aefb7723e1092c450754ef6c07922b1bf}\label{core_8h_aefb7723e1092c450754ef6c07922b1bf} 
+\index{core.h@{core.h}!POSITIVE@{POSITIVE}}
+\index{POSITIVE@{POSITIVE}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{POSITIVE}{POSITIVE}}
+{\footnotesize\ttfamily \#define POSITIVE~1}
+
+\Hypertarget{core_8h_a8687c17b33405b47d478619da9d16103}\label{core_8h_a8687c17b33405b47d478619da9d16103} 
+\index{core.h@{core.h}!PTIME\_TO\_FREQ@{PTIME\_TO\_FREQ}}
+\index{PTIME\_TO\_FREQ@{PTIME\_TO\_FREQ}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{PTIME\_TO\_FREQ}{PTIME\_TO\_FREQ}}
+{\footnotesize\ttfamily \#define PTIME\+\_\+\+TO\+\_\+\+FREQ(\begin{DoxyParamCaption}\item[{}]{PT }\end{DoxyParamCaption})~(1.\+0/PT)}
+
+\Hypertarget{core_8h_ad8e90dc03edf98c89c55f15ed208f9a9}\label{core_8h_ad8e90dc03edf98c89c55f15ed208f9a9} 
+\index{core.h@{core.h}!SBI@{SBI}}
+\index{SBI@{SBI}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{SBI}{SBI}}
+{\footnotesize\ttfamily \#define SBI(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \texorpdfstring{$\vert$}{|}= (1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_abe15cb6b3f99758688fdd0c5dd1864ec}\label{core_8h_abe15cb6b3f99758688fdd0c5dd1864ec} 
+\index{core.h@{core.h}!SBI32@{SBI32}}
+\index{SBI32@{SBI32}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{SBI32}{SBI32}}
+{\footnotesize\ttfamily \#define SBI32(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit }\end{DoxyParamCaption})~((reg) \texorpdfstring{$\vert$}{|}= (1U $<$$<$ (bit)))}
+
+\Hypertarget{core_8h_ae6aa8c01acd9200934a132168c361b0c}\label{core_8h_ae6aa8c01acd9200934a132168c361b0c} 
+\index{core.h@{core.h}!SIGN@{SIGN}}
+\index{SIGN@{SIGN}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{SIGN}{SIGN}}
+{\footnotesize\ttfamily \#define SIGN(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~((n$>$0)?1\+:((n$<$0)?-\/1\+:0))}
+
+\Hypertarget{core_8h_a877792595c7ef3dd6bae7ebcc3e89c98}\label{core_8h_a877792595c7ef3dd6bae7ebcc3e89c98} 
+\index{core.h@{core.h}!SIGN\_NBIAS@{SIGN\_NBIAS}}
+\index{SIGN\_NBIAS@{SIGN\_NBIAS}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{SIGN\_NBIAS}{SIGN\_NBIAS}}
+{\footnotesize\ttfamily \#define SIGN\+\_\+\+NBIAS(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~((n$<$=0)?-\/1\+:1)}
+
+\Hypertarget{core_8h_a8d09767e16118fa490a9d51104830548}\label{core_8h_a8d09767e16118fa490a9d51104830548} 
+\index{core.h@{core.h}!SIGN\_PBIAS@{SIGN\_PBIAS}}
+\index{SIGN\_PBIAS@{SIGN\_PBIAS}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{SIGN\_PBIAS}{SIGN\_PBIAS}}
+{\footnotesize\ttfamily \#define SIGN\+\_\+\+PBIAS(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~((n$>$=0)?1\+:-\/1)}
+
+\Hypertarget{core_8h_ac328e551bde3d39b6d7b8cc9e048d941}\label{core_8h_ac328e551bde3d39b6d7b8cc9e048d941} 
+\index{core.h@{core.h}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily \#define ZERO~0}
+

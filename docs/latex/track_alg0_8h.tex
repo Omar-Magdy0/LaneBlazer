@@ -1,0 +1,209 @@
+\doxysection{src/module/track\+Alg0.h File Reference}
+\hypertarget{track_alg0_8h}{}\label{track_alg0_8h}\index{src/module/trackAlg0.h@{src/module/trackAlg0.h}}
+
+
+Header file for the track algorithm module.  
+
+
+{\ttfamily \#include "{}core/delta\+\_\+sys.\+h"{}}\newline
+{\ttfamily \#include "{}IRsensor.\+h"{}}\newline
+{\ttfamily \#include "{}core/core.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstate__tick_count__t}{state\+\_\+tick\+Count\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold the current and target tick counts for a state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{structtrack_alg}{track\+Alg}}
+\begin{DoxyCompactList}\small\item\em Class to implement the track algorithm for the vehicle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a135a77b8970ddf0d84fc83da3e194fef}{FRWRD\+\_\+\+SS}}~6
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_ab5f540235f03d1f5c538eac5dfd43910}{FRWRD\+\_\+\+FS}}~5
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_ae4151652f3eed18f018c02b7a67e32fb}{HARD\+\_\+\+FRWRD\+\_\+\+LEFT}}~4
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_aeb6a93f4e075eecd960e1c71580e8664}{HARD\+\_\+\+FRWRD\+\_\+\+RIGHT}}~3
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a62712528b2a460393ab7d365d6b809ef}{FRWRD\+\_\+\+RIGHT}}~2
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a1ad32ed42565edf04e5621990f24b11e}{FRWRD\+\_\+\+LEFT}}~1
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_ae19b6bb2940d2fbe0a79852b070eeafd}{STOP}}~0
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_aa33ed83bd8dcd8545de3f8d350bdadda}{BCKWRD\+\_\+\+LEFT}}~-\/1
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a5a2a169b1319a49e226b0c3b7d824dc3}{BCKWRD\+\_\+\+RIGHT}}~-\/2
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a6bd3ff986073fe38aad6a8aa506e6e28}{HARD\+\_\+\+BCKWRD\+\_\+\+RIGHT}}~3
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_ad556b5035318d5bf98310d59eb3f4e3e}{HARD\+\_\+\+BCKWRD\+\_\+\+LEFT}}~4
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a859762f7a15c153d151af5490efda231}{BCKWRD}}~-\/5
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a735563036dced0b7d6cc98f97ea4978b}{ERR}}~0x\+FF
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a93709ea869e285e95bc633d0c2d0b8d2}{FR\+\_\+\+IR\+\_\+\+BIT}}~0
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_ae0fe51e5a6c1ca0639f2f2dd0158e922}{FL\+\_\+\+IR\+\_\+\+BIT}}~1
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a363e389bdc02a087dd0d3fd18c4684cb}{FFC\+\_\+\+IR\+\_\+\+BIT}}~2
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a7b488b40d4c0af3b193cb62927179fa6}{CROSS\+\_\+\+THRESH}}(c,  t)~(c $>$ t)
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_a5a67d95251263de90fb187205e395464}{alg\+Tick\+Freq}}~\mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\+\_\+\+FREQ}}
+\item 
+\#define \mbox{\hyperlink{track_alg0_8h_abbd90239ffc98276427b5d5ad5518ebf}{pd\+Ms\+To\+Alg\+Ticks}}(ms)~((ms)\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{track_alg0_8h_a5a67d95251263de90fb187205e395464}{alg\+Tick\+Freq}} / 1000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{track_alg0_8h_a95fa09c22dacbcd7d53a531cc4691ae3}{current\+State}} 
+\begin{DoxyCompactList}\small\item\em Enum to represent the current state of the vehicle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the track algorithm module. 
+
+This file contains the definitions and declarations for the track algorithm used in the Lane\+Blazer project. The algorithm controls the vehicle\textquotesingle{}s movement based on IR sensor readings.
+
+@project Lane\+Blazer\+\_\+\+V-\/1\+\_\+arduino\+Core \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/10-\/01
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+This file is part of the Lane\+Blazer project. 
+\end{DoxyNote}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{track_alg0_8h_a5a67d95251263de90fb187205e395464}\label{track_alg0_8h_a5a67d95251263de90fb187205e395464} 
+\index{trackAlg0.h@{trackAlg0.h}!algTickFreq@{algTickFreq}}
+\index{algTickFreq@{algTickFreq}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{algTickFreq}{algTickFreq}}
+{\footnotesize\ttfamily \#define alg\+Tick\+Freq~\mbox{\hyperlink{_config_8h_ad90d4c4ebea43396f87791ded3dde7df}{CNTRLLOOP\+\_\+\+FREQ}}}
+
+\Hypertarget{track_alg0_8h_a859762f7a15c153d151af5490efda231}\label{track_alg0_8h_a859762f7a15c153d151af5490efda231} 
+\index{trackAlg0.h@{trackAlg0.h}!BCKWRD@{BCKWRD}}
+\index{BCKWRD@{BCKWRD}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{BCKWRD}{BCKWRD}}
+{\footnotesize\ttfamily \#define BCKWRD~-\/5}
+
+\Hypertarget{track_alg0_8h_aa33ed83bd8dcd8545de3f8d350bdadda}\label{track_alg0_8h_aa33ed83bd8dcd8545de3f8d350bdadda} 
+\index{trackAlg0.h@{trackAlg0.h}!BCKWRD\_LEFT@{BCKWRD\_LEFT}}
+\index{BCKWRD\_LEFT@{BCKWRD\_LEFT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{BCKWRD\_LEFT}{BCKWRD\_LEFT}}
+{\footnotesize\ttfamily \#define BCKWRD\+\_\+\+LEFT~-\/1}
+
+\Hypertarget{track_alg0_8h_a5a2a169b1319a49e226b0c3b7d824dc3}\label{track_alg0_8h_a5a2a169b1319a49e226b0c3b7d824dc3} 
+\index{trackAlg0.h@{trackAlg0.h}!BCKWRD\_RIGHT@{BCKWRD\_RIGHT}}
+\index{BCKWRD\_RIGHT@{BCKWRD\_RIGHT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{BCKWRD\_RIGHT}{BCKWRD\_RIGHT}}
+{\footnotesize\ttfamily \#define BCKWRD\+\_\+\+RIGHT~-\/2}
+
+\Hypertarget{track_alg0_8h_a7b488b40d4c0af3b193cb62927179fa6}\label{track_alg0_8h_a7b488b40d4c0af3b193cb62927179fa6} 
+\index{trackAlg0.h@{trackAlg0.h}!CROSS\_THRESH@{CROSS\_THRESH}}
+\index{CROSS\_THRESH@{CROSS\_THRESH}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{CROSS\_THRESH}{CROSS\_THRESH}}
+{\footnotesize\ttfamily \#define CROSS\+\_\+\+THRESH(\begin{DoxyParamCaption}\item[{}]{c,  }\item[{}]{t }\end{DoxyParamCaption})~(c $>$ t)}
+
+\Hypertarget{track_alg0_8h_a735563036dced0b7d6cc98f97ea4978b}\label{track_alg0_8h_a735563036dced0b7d6cc98f97ea4978b} 
+\index{trackAlg0.h@{trackAlg0.h}!ERR@{ERR}}
+\index{ERR@{ERR}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{ERR}{ERR}}
+{\footnotesize\ttfamily \#define ERR~0x\+FF}
+
+\Hypertarget{track_alg0_8h_a363e389bdc02a087dd0d3fd18c4684cb}\label{track_alg0_8h_a363e389bdc02a087dd0d3fd18c4684cb} 
+\index{trackAlg0.h@{trackAlg0.h}!FFC\_IR\_BIT@{FFC\_IR\_BIT}}
+\index{FFC\_IR\_BIT@{FFC\_IR\_BIT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FFC\_IR\_BIT}{FFC\_IR\_BIT}}
+{\footnotesize\ttfamily \#define FFC\+\_\+\+IR\+\_\+\+BIT~2}
+
+\Hypertarget{track_alg0_8h_ae0fe51e5a6c1ca0639f2f2dd0158e922}\label{track_alg0_8h_ae0fe51e5a6c1ca0639f2f2dd0158e922} 
+\index{trackAlg0.h@{trackAlg0.h}!FL\_IR\_BIT@{FL\_IR\_BIT}}
+\index{FL\_IR\_BIT@{FL\_IR\_BIT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FL\_IR\_BIT}{FL\_IR\_BIT}}
+{\footnotesize\ttfamily \#define FL\+\_\+\+IR\+\_\+\+BIT~1}
+
+\Hypertarget{track_alg0_8h_a93709ea869e285e95bc633d0c2d0b8d2}\label{track_alg0_8h_a93709ea869e285e95bc633d0c2d0b8d2} 
+\index{trackAlg0.h@{trackAlg0.h}!FR\_IR\_BIT@{FR\_IR\_BIT}}
+\index{FR\_IR\_BIT@{FR\_IR\_BIT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FR\_IR\_BIT}{FR\_IR\_BIT}}
+{\footnotesize\ttfamily \#define FR\+\_\+\+IR\+\_\+\+BIT~0}
+
+\Hypertarget{track_alg0_8h_ab5f540235f03d1f5c538eac5dfd43910}\label{track_alg0_8h_ab5f540235f03d1f5c538eac5dfd43910} 
+\index{trackAlg0.h@{trackAlg0.h}!FRWRD\_FS@{FRWRD\_FS}}
+\index{FRWRD\_FS@{FRWRD\_FS}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_FS}{FRWRD\_FS}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+FS~5}
+
+\Hypertarget{track_alg0_8h_a1ad32ed42565edf04e5621990f24b11e}\label{track_alg0_8h_a1ad32ed42565edf04e5621990f24b11e} 
+\index{trackAlg0.h@{trackAlg0.h}!FRWRD\_LEFT@{FRWRD\_LEFT}}
+\index{FRWRD\_LEFT@{FRWRD\_LEFT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_LEFT}{FRWRD\_LEFT}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+LEFT~1}
+
+\Hypertarget{track_alg0_8h_a62712528b2a460393ab7d365d6b809ef}\label{track_alg0_8h_a62712528b2a460393ab7d365d6b809ef} 
+\index{trackAlg0.h@{trackAlg0.h}!FRWRD\_RIGHT@{FRWRD\_RIGHT}}
+\index{FRWRD\_RIGHT@{FRWRD\_RIGHT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_RIGHT}{FRWRD\_RIGHT}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+RIGHT~2}
+
+\Hypertarget{track_alg0_8h_a135a77b8970ddf0d84fc83da3e194fef}\label{track_alg0_8h_a135a77b8970ddf0d84fc83da3e194fef} 
+\index{trackAlg0.h@{trackAlg0.h}!FRWRD\_SS@{FRWRD\_SS}}
+\index{FRWRD\_SS@{FRWRD\_SS}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{FRWRD\_SS}{FRWRD\_SS}}
+{\footnotesize\ttfamily \#define FRWRD\+\_\+\+SS~6}
+
+\Hypertarget{track_alg0_8h_ad556b5035318d5bf98310d59eb3f4e3e}\label{track_alg0_8h_ad556b5035318d5bf98310d59eb3f4e3e} 
+\index{trackAlg0.h@{trackAlg0.h}!HARD\_BCKWRD\_LEFT@{HARD\_BCKWRD\_LEFT}}
+\index{HARD\_BCKWRD\_LEFT@{HARD\_BCKWRD\_LEFT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{HARD\_BCKWRD\_LEFT}{HARD\_BCKWRD\_LEFT}}
+{\footnotesize\ttfamily \#define HARD\+\_\+\+BCKWRD\+\_\+\+LEFT~4}
+
+\Hypertarget{track_alg0_8h_a6bd3ff986073fe38aad6a8aa506e6e28}\label{track_alg0_8h_a6bd3ff986073fe38aad6a8aa506e6e28} 
+\index{trackAlg0.h@{trackAlg0.h}!HARD\_BCKWRD\_RIGHT@{HARD\_BCKWRD\_RIGHT}}
+\index{HARD\_BCKWRD\_RIGHT@{HARD\_BCKWRD\_RIGHT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{HARD\_BCKWRD\_RIGHT}{HARD\_BCKWRD\_RIGHT}}
+{\footnotesize\ttfamily \#define HARD\+\_\+\+BCKWRD\+\_\+\+RIGHT~3}
+
+\Hypertarget{track_alg0_8h_ae4151652f3eed18f018c02b7a67e32fb}\label{track_alg0_8h_ae4151652f3eed18f018c02b7a67e32fb} 
+\index{trackAlg0.h@{trackAlg0.h}!HARD\_FRWRD\_LEFT@{HARD\_FRWRD\_LEFT}}
+\index{HARD\_FRWRD\_LEFT@{HARD\_FRWRD\_LEFT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{HARD\_FRWRD\_LEFT}{HARD\_FRWRD\_LEFT}}
+{\footnotesize\ttfamily \#define HARD\+\_\+\+FRWRD\+\_\+\+LEFT~4}
+
+\Hypertarget{track_alg0_8h_aeb6a93f4e075eecd960e1c71580e8664}\label{track_alg0_8h_aeb6a93f4e075eecd960e1c71580e8664} 
+\index{trackAlg0.h@{trackAlg0.h}!HARD\_FRWRD\_RIGHT@{HARD\_FRWRD\_RIGHT}}
+\index{HARD\_FRWRD\_RIGHT@{HARD\_FRWRD\_RIGHT}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{HARD\_FRWRD\_RIGHT}{HARD\_FRWRD\_RIGHT}}
+{\footnotesize\ttfamily \#define HARD\+\_\+\+FRWRD\+\_\+\+RIGHT~3}
+
+\Hypertarget{track_alg0_8h_abbd90239ffc98276427b5d5ad5518ebf}\label{track_alg0_8h_abbd90239ffc98276427b5d5ad5518ebf} 
+\index{trackAlg0.h@{trackAlg0.h}!pdMsToAlgTicks@{pdMsToAlgTicks}}
+\index{pdMsToAlgTicks@{pdMsToAlgTicks}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{pdMsToAlgTicks}{pdMsToAlgTicks}}
+{\footnotesize\ttfamily \#define pd\+Ms\+To\+Alg\+Ticks(\begin{DoxyParamCaption}\item[{}]{ms }\end{DoxyParamCaption})~((ms)\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{track_alg0_8h_a5a67d95251263de90fb187205e395464}{alg\+Tick\+Freq}} / 1000)}
+
+\Hypertarget{track_alg0_8h_ae19b6bb2940d2fbe0a79852b070eeafd}\label{track_alg0_8h_ae19b6bb2940d2fbe0a79852b070eeafd} 
+\index{trackAlg0.h@{trackAlg0.h}!STOP@{STOP}}
+\index{STOP@{STOP}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{STOP}{STOP}}
+{\footnotesize\ttfamily \#define STOP~0}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{track_alg0_8h_a95fa09c22dacbcd7d53a531cc4691ae3}\label{track_alg0_8h_a95fa09c22dacbcd7d53a531cc4691ae3} 
+\index{trackAlg0.h@{trackAlg0.h}!currentState@{currentState}}
+\index{currentState@{currentState}!trackAlg0.h@{trackAlg0.h}}
+\doxysubsubsection{\texorpdfstring{currentState}{currentState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{track_alg0_8h_a95fa09c22dacbcd7d53a531cc4691ae3}{current\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum to represent the current state of the vehicle. 
+

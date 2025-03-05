@@ -1,0 +1,235 @@
+\doxysection{PID Class Reference}
+\hypertarget{class_p_i_d}{}\label{class_p_i_d}\index{PID@{PID}}
+
+
+A simple \doxylink{class_p_i_d}{PID} control block with basic functionality.  
+
+
+
+
+{\ttfamily \#include $<$PID.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_i_d_ad4ca312b092c3af2054e6186cfde3ddc}{PID}} (float Kp, float Ki, float Kd, float max\+\_\+out, float min\+\_\+out, float dt)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_p_i_d}{PID} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a822eafdd8008570d7609889dbe756c2f}{set\+\_\+\+Kp}} (float Kp)
+\begin{DoxyCompactList}\small\item\em Set the proportional gain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a952851fb2c3bd0c806d69af6e5fd4978}{set\+\_\+\+Ki}} (float Ki)
+\begin{DoxyCompactList}\small\item\em Set the integral gain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a045661b91895332118ca3f1ee267193e}{set\+\_\+\+Kd}} (float Kd)
+\begin{DoxyCompactList}\small\item\em Set the derivative gain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a2c6bbbfd7386d1844293eac73313ef00}{set\+\_\+dt}} (float dt)
+\begin{DoxyCompactList}\small\item\em Set the time step. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d_a8422ebdeff80b4973c7488efa3807e8d}{get\+\_\+\+Kp}} ()
+\begin{DoxyCompactList}\small\item\em Get the proportional gain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d_a7a0d7ae0c906a021e8cc0d0654ec4019}{get\+\_\+\+Ki}} ()
+\begin{DoxyCompactList}\small\item\em Get the integral gain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d_aa15c8ecec34e9ce19cf945921c420ff5}{get\+\_\+\+Kd}} ()
+\begin{DoxyCompactList}\small\item\em Get the derivative gain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d_a8cbf8393c0f851b5a75f07c210b9e160}{get\+\_\+dt}} ()
+\begin{DoxyCompactList}\small\item\em Get the time step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_aa38ec1b5f0345ed89f5a05ce699d9282}{set\+\_\+setpoint}} (float setpoint)
+\begin{DoxyCompactList}\small\item\em Set the desired setpoint. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d_a7e6ba0bf88bd86d33d7912157107fe44}{PID\+\_\+\+EXECUTE}} (float feedback)
+\begin{DoxyCompactList}\small\item\em Update the output and terms based on feedback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d_a3addd608bb85cbc329023962d32d362e}{PID\+\_\+\+RESET}} ()
+\begin{DoxyCompactList}\small\item\em Reset the \doxylink{class_p_i_d}{PID} controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple \doxylink{class_p_i_d}{PID} control block with basic functionality. 
+
+This class implements a \doxylink{class_p_i_d}{PID} controller with support for overflow prevention and integral term anti-\/windup. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_i_d_ad4ca312b092c3af2054e6186cfde3ddc}\label{class_p_i_d_ad4ca312b092c3af2054e6186cfde3ddc} 
+\index{PID@{PID}!PID@{PID}}
+\index{PID@{PID}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID()}{PID()}}
+{\footnotesize\ttfamily PID\+::\+PID (\begin{DoxyParamCaption}\item[{float}]{Kp,  }\item[{float}]{Ki,  }\item[{float}]{Kd,  }\item[{float}]{max\+\_\+out,  }\item[{float}]{min\+\_\+out,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_p_i_d}{PID} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & Proportional gain \\
+\hline
+{\em Ki} & Integral gain \\
+\hline
+{\em Kd} & Derivative gain \\
+\hline
+{\em max\+\_\+out} & Maximum output value \\
+\hline
+{\em min\+\_\+out} & Minimum output value \\
+\hline
+{\em dt} & Time step \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_i_d_a8cbf8393c0f851b5a75f07c210b9e160}\label{class_p_i_d_a8cbf8393c0f851b5a75f07c210b9e160} 
+\index{PID@{PID}!get\_dt@{get\_dt}}
+\index{get\_dt@{get\_dt}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{get\_dt()}{get\_dt()}}
+{\footnotesize\ttfamily float PID\+::get\+\_\+dt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the time step. 
+
+\begin{DoxyReturn}{Returns}
+Time step 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_aa15c8ecec34e9ce19cf945921c420ff5}\label{class_p_i_d_aa15c8ecec34e9ce19cf945921c420ff5} 
+\index{PID@{PID}!get\_Kd@{get\_Kd}}
+\index{get\_Kd@{get\_Kd}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{get\_Kd()}{get\_Kd()}}
+{\footnotesize\ttfamily float PID\+::get\+\_\+\+Kd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the derivative gain. 
+
+\begin{DoxyReturn}{Returns}
+Derivative gain 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_a7a0d7ae0c906a021e8cc0d0654ec4019}\label{class_p_i_d_a7a0d7ae0c906a021e8cc0d0654ec4019} 
+\index{PID@{PID}!get\_Ki@{get\_Ki}}
+\index{get\_Ki@{get\_Ki}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{get\_Ki()}{get\_Ki()}}
+{\footnotesize\ttfamily float PID\+::get\+\_\+\+Ki (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the integral gain. 
+
+\begin{DoxyReturn}{Returns}
+Integral gain 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_a8422ebdeff80b4973c7488efa3807e8d}\label{class_p_i_d_a8422ebdeff80b4973c7488efa3807e8d} 
+\index{PID@{PID}!get\_Kp@{get\_Kp}}
+\index{get\_Kp@{get\_Kp}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{get\_Kp()}{get\_Kp()}}
+{\footnotesize\ttfamily float PID\+::get\+\_\+\+Kp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the proportional gain. 
+
+\begin{DoxyReturn}{Returns}
+Proportional gain 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_a7e6ba0bf88bd86d33d7912157107fe44}\label{class_p_i_d_a7e6ba0bf88bd86d33d7912157107fe44} 
+\index{PID@{PID}!PID\_EXECUTE@{PID\_EXECUTE}}
+\index{PID\_EXECUTE@{PID\_EXECUTE}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID\_EXECUTE()}{PID\_EXECUTE()}}
+{\footnotesize\ttfamily float PID\+::\+PID\+\_\+\+EXECUTE (\begin{DoxyParamCaption}\item[{float}]{feedback }\end{DoxyParamCaption})}
+
+
+
+Update the output and terms based on feedback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em feedback} & Feedback value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output from the \doxylink{class_p_i_d}{PID} controller 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d_a3addd608bb85cbc329023962d32d362e}\label{class_p_i_d_a3addd608bb85cbc329023962d32d362e} 
+\index{PID@{PID}!PID\_RESET@{PID\_RESET}}
+\index{PID\_RESET@{PID\_RESET}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{PID\_RESET()}{PID\_RESET()}}
+{\footnotesize\ttfamily void PID\+::\+PID\+\_\+\+RESET (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the \doxylink{class_p_i_d}{PID} controller. 
+
+\Hypertarget{class_p_i_d_a2c6bbbfd7386d1844293eac73313ef00}\label{class_p_i_d_a2c6bbbfd7386d1844293eac73313ef00} 
+\index{PID@{PID}!set\_dt@{set\_dt}}
+\index{set\_dt@{set\_dt}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_dt()}{set\_dt()}}
+{\footnotesize\ttfamily void PID\+::set\+\_\+dt (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+
+
+Set the time step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d_a045661b91895332118ca3f1ee267193e}\label{class_p_i_d_a045661b91895332118ca3f1ee267193e} 
+\index{PID@{PID}!set\_Kd@{set\_Kd}}
+\index{set\_Kd@{set\_Kd}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_Kd()}{set\_Kd()}}
+{\footnotesize\ttfamily void PID\+::set\+\_\+\+Kd (\begin{DoxyParamCaption}\item[{float}]{Kd }\end{DoxyParamCaption})}
+
+
+
+Set the derivative gain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kd} & Derivative gain \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d_a952851fb2c3bd0c806d69af6e5fd4978}\label{class_p_i_d_a952851fb2c3bd0c806d69af6e5fd4978} 
+\index{PID@{PID}!set\_Ki@{set\_Ki}}
+\index{set\_Ki@{set\_Ki}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_Ki()}{set\_Ki()}}
+{\footnotesize\ttfamily void PID\+::set\+\_\+\+Ki (\begin{DoxyParamCaption}\item[{float}]{Ki }\end{DoxyParamCaption})}
+
+
+
+Set the integral gain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ki} & Integral gain \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d_a822eafdd8008570d7609889dbe756c2f}\label{class_p_i_d_a822eafdd8008570d7609889dbe756c2f} 
+\index{PID@{PID}!set\_Kp@{set\_Kp}}
+\index{set\_Kp@{set\_Kp}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_Kp()}{set\_Kp()}}
+{\footnotesize\ttfamily void PID\+::set\+\_\+\+Kp (\begin{DoxyParamCaption}\item[{float}]{Kp }\end{DoxyParamCaption})}
+
+
+
+Set the proportional gain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & Proportional gain \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d_aa38ec1b5f0345ed89f5a05ce699d9282}\label{class_p_i_d_aa38ec1b5f0345ed89f5a05ce699d9282} 
+\index{PID@{PID}!set\_setpoint@{set\_setpoint}}
+\index{set\_setpoint@{set\_setpoint}!PID@{PID}}
+\doxysubsubsection{\texorpdfstring{set\_setpoint()}{set\_setpoint()}}
+{\footnotesize\ttfamily void PID\+::set\+\_\+setpoint (\begin{DoxyParamCaption}\item[{float}]{setpoint }\end{DoxyParamCaption})}
+
+
+
+Set the desired setpoint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setpoint} & Desired setpoint \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/core/\mbox{\hyperlink{_p_i_d_8h}{PID.\+h}}\item 
+src/core/\mbox{\hyperlink{_p_i_d_8cpp}{PID.\+cpp}}\end{DoxyCompactItemize}

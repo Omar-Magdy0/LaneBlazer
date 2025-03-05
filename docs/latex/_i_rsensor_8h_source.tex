@@ -1,0 +1,40 @@
+\doxysection{IRsensor.\+h}
+\hypertarget{_i_rsensor_8h_source}{}\label{_i_rsensor_8h_source}\index{src/module/IRsensor.h@{src/module/IRsensor.h}}
+\mbox{\hyperlink{_i_rsensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{Config.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_rsensors__readings__t}{IRsensors\_readings\_t}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_i_rsensors__readings__t_a080fdcdfa37b48172153f51d6de0c36c}{FR\_val}};\ \ }
+\DoxyCodeLine{00011\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_i_rsensors__readings__t_a7ef307975bc0f15d00dd06fb6c15381d}{FL\_val}};\ \ }
+\DoxyCodeLine{00012\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_i_rsensors__readings__t_ad193d4a5c8990a261a76b9317494d6fb}{FFC\_val}};\ }
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\_t}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_i_rsensors__readings__t}{IRsensors\_readings\_t}}\ sensor\_readings;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_i_rsensors__t_a1f51028acff24b087953207b5686b563}{read}}()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ sensor\_readings.\mbox{\hyperlink{struct_i_rsensors__readings__t_a080fdcdfa37b48172153f51d6de0c36c}{FR\_val}}\ =\ analogRead(\mbox{\hyperlink{_config_8h_a5dc0330961590b07c630d23c612e4bb6}{FR\_IR\_IN}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ sensor\_readings.\mbox{\hyperlink{struct_i_rsensors__readings__t_a7ef307975bc0f15d00dd06fb6c15381d}{FL\_val}}\ =\ analogRead(\mbox{\hyperlink{_config_8h_aaa3fd0c62e9a4f7d5ee5e5109b179e7f}{FL\_IR\_IN}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ sensor\_readings.\mbox{\hyperlink{struct_i_rsensors__readings__t_ad193d4a5c8990a261a76b9317494d6fb}{FFC\_val}}\ =\ analogRead(\mbox{\hyperlink{_config_8h_ad9080b27e4a3900e4151842e2560eafd}{FFC\_IR\_IN}});}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_i_rsensors__readings__t}{IRsensors\_readings\_t}}\ \mbox{\hyperlink{struct_i_rsensors__t_abe12b2ca9702eafa0382fe159cdc185a}{getReading}}()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sensor\_readings;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_i_rsensors__t_a06ce77833edd97446d4467663c8fd74d}{init}}()\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ pinMode(\mbox{\hyperlink{_config_8h_a5dc0330961590b07c630d23c612e4bb6}{FR\_IR\_IN}},\ INPUT\_ANALOG);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ pinMode(\mbox{\hyperlink{_config_8h_aaa3fd0c62e9a4f7d5ee5e5109b179e7f}{FL\_IR\_IN}},\ INPUT\_ANALOG);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ pinMode(\mbox{\hyperlink{_config_8h_ad9080b27e4a3900e4151842e2560eafd}{FFC\_IR\_IN}},\ INPUT\_ANALOG);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ analogReadResolution(\mbox{\hyperlink{_config_8h_a44de9028715124b81511ec8253cc0392}{ANALOG\_RES\_BITS}});}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+
+\end{DoxyCode}

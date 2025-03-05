@@ -1,0 +1,64 @@
+\doxysection{IRsensors\+\_\+t Struct Reference}
+\hypertarget{struct_i_rsensors__t}{}\label{struct_i_rsensors__t}\index{IRsensors\_t@{IRsensors\_t}}
+
+
+Class to manage IR sensors.  
+
+
+
+
+{\ttfamily \#include $<$IRsensor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_i_rsensors__t_a1f51028acff24b087953207b5686b563}{read}} ()
+\begin{DoxyCompactList}\small\item\em Reads the values from the IR sensors and stores them in sensor\+\_\+readings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_rsensors__readings__t}{IRsensors\+\_\+readings\+\_\+t}} \mbox{\hyperlink{struct_i_rsensors__t_abe12b2ca9702eafa0382fe159cdc185a}{get\+Reading}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current IR sensor readings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_i_rsensors__t_a06ce77833edd97446d4467663c8fd74d}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the IR sensors by setting the pin modes and analog read resolution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to manage IR sensors. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_i_rsensors__t_abe12b2ca9702eafa0382fe159cdc185a}\label{struct_i_rsensors__t_abe12b2ca9702eafa0382fe159cdc185a} 
+\index{IRsensors\_t@{IRsensors\_t}!getReading@{getReading}}
+\index{getReading@{getReading}!IRsensors\_t@{IRsensors\_t}}
+\doxysubsubsection{\texorpdfstring{getReading()}{getReading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_rsensors__readings__t}{IRsensors\+\_\+readings\+\_\+t}} IRsensors\+\_\+t\+::get\+Reading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the current IR sensor readings. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_i_rsensors__readings__t}{IRsensors\+\_\+readings\+\_\+t} The current sensor readings. 
+\end{DoxyReturn}
+\Hypertarget{struct_i_rsensors__t_a06ce77833edd97446d4467663c8fd74d}\label{struct_i_rsensors__t_a06ce77833edd97446d4467663c8fd74d} 
+\index{IRsensors\_t@{IRsensors\_t}!init@{init}}
+\index{init@{init}!IRsensors\_t@{IRsensors\_t}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void IRsensors\+\_\+t\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the IR sensors by setting the pin modes and analog read resolution. 
+
+\Hypertarget{struct_i_rsensors__t_a1f51028acff24b087953207b5686b563}\label{struct_i_rsensors__t_a1f51028acff24b087953207b5686b563} 
+\index{IRsensors\_t@{IRsensors\_t}!read@{read}}
+\index{read@{read}!IRsensors\_t@{IRsensors\_t}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void IRsensors\+\_\+t\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads the values from the IR sensors and stores them in sensor\+\_\+readings. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/module/\mbox{\hyperlink{_i_rsensor_8h}{IRsensor.\+h}}\end{DoxyCompactItemize}

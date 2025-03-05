@@ -1,0 +1,144 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Free\+RTOS-\/based control system for an autonomous vehicle.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Free\+RTOS.\+h$>$}\newline
+{\ttfamily \#include $<$task.\+h$>$}\newline
+{\ttfamily \#include $<$queue.\+h$>$}\newline
+{\ttfamily \#include "{}core/debug\+\_\+interface.\+h"{}}\newline
+{\ttfamily \#include "{}core/delta\+\_\+sys.\+h"{}}\newline
+{\ttfamily \#include "{}core/simple\+\_\+parser.\+h"{}}\newline
+{\ttfamily \#include "{}temp\+\_\+modules.\+h"{}}\newline
+{\ttfamily \#include "{}module/track\+Alg0.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a2b4e4bc3917157a9bdf9f1900dc1c7a0}{occasional\+Message}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Periodic task to print system status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a7e061fa1557bb9cc66628fc0c6bd167b}{control\+Loop}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Main control loop task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a03cf29ffa36d026dfc32074d9dfb792f}{cmd}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Command processing task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Initializes hardware and starts Free\+RTOS scheduler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main loop (unused, as Free\+RTOS takes control). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsimple__parser}{simple\+\_\+parser}} \mbox{\hyperlink{main_8cpp_a0a3e86a27bdd12e56383520091494136}{parser}}
+\begin{DoxyCompactList}\small\item\em Command parser instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\+\_\+t}} \mbox{\hyperlink{main_8cpp_a3d40806e2792e127addf62197d8d8f88}{IRsensors}}
+\begin{DoxyCompactList}\small\item\em IR sensor module instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtrack_alg}{track\+Alg}} \mbox{\hyperlink{main_8cpp_adc09905837aec5990d1090fb9072457c}{alg}}
+\begin{DoxyCompactList}\small\item\em Tracking algorithm instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Free\+RTOS-\/based control system for an autonomous vehicle. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a03cf29ffa36d026dfc32074d9dfb792f}\label{main_8cpp_a03cf29ffa36d026dfc32074d9dfb792f} 
+\index{main.cpp@{main.cpp}!cmd@{cmd}}
+\index{cmd@{cmd}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{cmd()}{cmd()}}
+{\footnotesize\ttfamily void cmd (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters }\end{DoxyParamCaption})}
+
+
+
+Command processing task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameters} & Unused Free\+RTOS parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a7e061fa1557bb9cc66628fc0c6bd167b}\label{main_8cpp_a7e061fa1557bb9cc66628fc0c6bd167b} 
+\index{main.cpp@{main.cpp}!controlLoop@{controlLoop}}
+\index{controlLoop@{controlLoop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{controlLoop()}{controlLoop()}}
+{\footnotesize\ttfamily void control\+Loop (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters }\end{DoxyParamCaption})}
+
+
+
+Main control loop task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameters} & Unused Free\+RTOS parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main loop (unused, as Free\+RTOS takes control). 
+
+\Hypertarget{main_8cpp_a2b4e4bc3917157a9bdf9f1900dc1c7a0}\label{main_8cpp_a2b4e4bc3917157a9bdf9f1900dc1c7a0} 
+\index{main.cpp@{main.cpp}!occasionalMessage@{occasionalMessage}}
+\index{occasionalMessage@{occasionalMessage}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{occasionalMessage()}{occasionalMessage()}}
+{\footnotesize\ttfamily void occasional\+Message (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters }\end{DoxyParamCaption})}
+
+
+
+Periodic task to print system status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv\+Parameters} & Unused Free\+RTOS parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes hardware and starts Free\+RTOS scheduler. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_adc09905837aec5990d1090fb9072457c}\label{main_8cpp_adc09905837aec5990d1090fb9072457c} 
+\index{main.cpp@{main.cpp}!alg@{alg}}
+\index{alg@{alg}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{alg}{alg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtrack_alg}{track\+Alg}} alg}
+
+
+
+Tracking algorithm instance. 
+
+\Hypertarget{main_8cpp_a3d40806e2792e127addf62197d8d8f88}\label{main_8cpp_a3d40806e2792e127addf62197d8d8f88} 
+\index{main.cpp@{main.cpp}!IRsensors@{IRsensors}}
+\index{IRsensors@{IRsensors}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IRsensors}{IRsensors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\+\_\+t}} IRsensors}
+
+
+
+IR sensor module instance. 
+
+\Hypertarget{main_8cpp_a0a3e86a27bdd12e56383520091494136}\label{main_8cpp_a0a3e86a27bdd12e56383520091494136} 
+\index{main.cpp@{main.cpp}!parser@{parser}}
+\index{parser@{parser}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsimple__parser}{simple\+\_\+parser}} parser}
+
+
+
+Command parser instance. 
+

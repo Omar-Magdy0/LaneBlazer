@@ -1,0 +1,84 @@
+\doxysection{src/core/delta\+\_\+sys.h File Reference}
+\hypertarget{delta__sys_8h}{}\label{delta__sys_8h}\index{src/core/delta\_sys.h@{src/core/delta\_sys.h}}
+{\ttfamily \#include "{}module/\+L293\+D.\+h"{}}\newline
+{\ttfamily \#include "{}module/rotry\+\_\+encoder.\+h"{}}\newline
+{\ttfamily \#include "{}PID.\+h"{}}\newline
+{\ttfamily \#include "{}core.\+h"{}}\newline
+{\ttfamily \#include "{}debug\+\_\+interface.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Config.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structveh__state__t}{veh\+\_\+state\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structmotor__power__t}{motor\+\_\+power\+\_\+t}}
+\item 
+class \mbox{\hyperlink{classvehicle}{vehicle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{delta__sys_8h_aa3b610ba335917482e893c443cba1099}{V\+\_\+\+TO\+\_\+\+ANGULAR\+\_\+\+V\+\_\+\+DIA}}(V,  D)~(2\texorpdfstring{$\ast$}{*}V/D)
+\item 
+\#define \mbox{\hyperlink{delta__sys_8h_ac051049caf7bf3bb264842bf608e30e6}{ANGULAR\+\_\+\+V\+\_\+\+TO\+\_\+\+V\+\_\+\+DIA}}(w,  D)~(w\texorpdfstring{$\ast$}{*}D/2)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}{veh\+\_\+cntrl\+Type}} \{ \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a547859f1d0b544c3984da6bc77f70368}{MOTORPOWER}}
+, \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a6131a3ff9f5e89352e6d0a74597a8a3b}{WHEELSPEED}}
+, \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a3c71a3d2c529bc22e2264fe8ab3424df}{SPD\+\_\+\+ANGV}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvehicle}{vehicle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{delta__sys_8h_a31e9d9396e049c1eb1a673fb3ad9e319}{vehicle\+\_\+lane\+Blazer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{delta__sys_8h_ac051049caf7bf3bb264842bf608e30e6}\label{delta__sys_8h_ac051049caf7bf3bb264842bf608e30e6} 
+\index{delta\_sys.h@{delta\_sys.h}!ANGULAR\_V\_TO\_V\_DIA@{ANGULAR\_V\_TO\_V\_DIA}}
+\index{ANGULAR\_V\_TO\_V\_DIA@{ANGULAR\_V\_TO\_V\_DIA}!delta\_sys.h@{delta\_sys.h}}
+\doxysubsubsection{\texorpdfstring{ANGULAR\_V\_TO\_V\_DIA}{ANGULAR\_V\_TO\_V\_DIA}}
+{\footnotesize\ttfamily \#define ANGULAR\+\_\+\+V\+\_\+\+TO\+\_\+\+V\+\_\+\+DIA(\begin{DoxyParamCaption}\item[{}]{w,  }\item[{}]{D }\end{DoxyParamCaption})~(w\texorpdfstring{$\ast$}{*}D/2)}
+
+\Hypertarget{delta__sys_8h_aa3b610ba335917482e893c443cba1099}\label{delta__sys_8h_aa3b610ba335917482e893c443cba1099} 
+\index{delta\_sys.h@{delta\_sys.h}!V\_TO\_ANGULAR\_V\_DIA@{V\_TO\_ANGULAR\_V\_DIA}}
+\index{V\_TO\_ANGULAR\_V\_DIA@{V\_TO\_ANGULAR\_V\_DIA}!delta\_sys.h@{delta\_sys.h}}
+\doxysubsubsection{\texorpdfstring{V\_TO\_ANGULAR\_V\_DIA}{V\_TO\_ANGULAR\_V\_DIA}}
+{\footnotesize\ttfamily \#define V\+\_\+\+TO\+\_\+\+ANGULAR\+\_\+\+V\+\_\+\+DIA(\begin{DoxyParamCaption}\item[{}]{V,  }\item[{}]{D }\end{DoxyParamCaption})~(2\texorpdfstring{$\ast$}{*}V/D)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}\label{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990} 
+\index{delta\_sys.h@{delta\_sys.h}!veh\_cntrlType@{veh\_cntrlType}}
+\index{veh\_cntrlType@{veh\_cntrlType}!delta\_sys.h@{delta\_sys.h}}
+\doxysubsubsection{\texorpdfstring{veh\_cntrlType}{veh\_cntrlType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990}{veh\+\_\+cntrl\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTORPOWER@{MOTORPOWER}!delta\_sys.h@{delta\_sys.h}}\index{delta\_sys.h@{delta\_sys.h}!MOTORPOWER@{MOTORPOWER}}}\Hypertarget{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a547859f1d0b544c3984da6bc77f70368}\label{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a547859f1d0b544c3984da6bc77f70368} 
+MOTORPOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHEELSPEED@{WHEELSPEED}!delta\_sys.h@{delta\_sys.h}}\index{delta\_sys.h@{delta\_sys.h}!WHEELSPEED@{WHEELSPEED}}}\Hypertarget{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a6131a3ff9f5e89352e6d0a74597a8a3b}\label{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a6131a3ff9f5e89352e6d0a74597a8a3b} 
+WHEELSPEED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPD\_ANGV@{SPD\_ANGV}!delta\_sys.h@{delta\_sys.h}}\index{delta\_sys.h@{delta\_sys.h}!SPD\_ANGV@{SPD\_ANGV}}}\Hypertarget{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a3c71a3d2c529bc22e2264fe8ab3424df}\label{delta__sys_8h_a7a3dee7c55360a1853d01f64a7e3a990a3c71a3d2c529bc22e2264fe8ab3424df} 
+SPD\+\_\+\+ANGV&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{delta__sys_8h_a31e9d9396e049c1eb1a673fb3ad9e319}\label{delta__sys_8h_a31e9d9396e049c1eb1a673fb3ad9e319} 
+\index{delta\_sys.h@{delta\_sys.h}!vehicle\_laneBlazer@{vehicle\_laneBlazer}}
+\index{vehicle\_laneBlazer@{vehicle\_laneBlazer}!delta\_sys.h@{delta\_sys.h}}
+\doxysubsubsection{\texorpdfstring{vehicle\_laneBlazer}{vehicle\_laneBlazer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvehicle}{vehicle}}\texorpdfstring{$\ast$}{*} vehicle\+\_\+lane\+Blazer\hspace{0.3cm}{\ttfamily [inline]}}
+

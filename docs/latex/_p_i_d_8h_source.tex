@@ -1,0 +1,53 @@
+\doxysection{PID.\+h}
+\hypertarget{_p_i_d_8h_source}{}\label{_p_i_d_8h_source}\index{src/core/PID.h@{src/core/PID.h}}
+\mbox{\hyperlink{_p_i_d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{../Config.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{core.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{debug__interface_8h}{debug\_interface.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_i_d}{PID}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{float}\ \_Kp;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{float}\ \_Ki;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{float}\ \_Kd;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{float}\ \_max\_out;\ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{float}\ \_min\_out;\ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{float}\ \_dt;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{float}\ \_last\_e;\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{float}\ \_integral\_e;\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ \_setpoint;\ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ last\_out;\ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{bool}\ is\_saturated;\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{class_p_i_d_ad4ca312b092c3af2054e6186cfde3ddc}{PID}}(\textcolor{keywordtype}{float}\ Kp,\ \textcolor{keywordtype}{float}\ Ki,\ \textcolor{keywordtype}{float}\ Kd,\ \textcolor{keywordtype}{float}\ max\_out,\ \textcolor{keywordtype}{float}\ min\_out,\ \textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a822eafdd8008570d7609889dbe756c2f}{set\_Kp}}(\textcolor{keywordtype}{float}\ Kp);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a952851fb2c3bd0c806d69af6e5fd4978}{set\_Ki}}(\textcolor{keywordtype}{float}\ Ki);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a045661b91895332118ca3f1ee267193e}{set\_Kd}}(\textcolor{keywordtype}{float}\ Kd);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a2c6bbbfd7386d1844293eac73313ef00}{set\_dt}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d_a8422ebdeff80b4973c7488efa3807e8d}{get\_Kp}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d_a7a0d7ae0c906a021e8cc0d0654ec4019}{get\_Ki}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d_aa15c8ecec34e9ce19cf945921c420ff5}{get\_Kd}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d_a8cbf8393c0f851b5a75f07c210b9e160}{get\_dt}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_aa38ec1b5f0345ed89f5a05ce699d9282}{set\_setpoint}}(\textcolor{keywordtype}{float}\ setpoint);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d_a7e6ba0bf88bd86d33d7912157107fe44}{PID\_EXECUTE}}(\textcolor{keywordtype}{float}\ feedback);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d_a3addd608bb85cbc329023962d32d362e}{PID\_RESET}}();}
+\DoxyCodeLine{00113\ \};}
+
+\end{DoxyCode}

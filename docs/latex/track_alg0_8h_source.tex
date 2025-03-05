@@ -1,0 +1,65 @@
+\doxysection{track\+Alg0.\+h}
+\hypertarget{track_alg0_8h_source}{}\label{track_alg0_8h_source}\index{src/module/trackAlg0.h@{src/module/trackAlg0.h}}
+\mbox{\hyperlink{track_alg0_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \#pragma\ once}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \#include\ "{}\mbox{\hyperlink{delta__sys_8h}{core/delta\_sys.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \#include\ "{}\mbox{\hyperlink{_i_rsensor_8h}{IRsensor.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \#include\ "{}\mbox{\hyperlink{core_8h}{core/core.h}}"{}}}
+\DoxyCodeLine{00021\ \ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \#define\ FRWRD\_SS\ 6}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \#define\ FRWRD\_FS\ 5}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \#define\ HARD\_FRWRD\_LEFT\ 4}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \#define\ HARD\_FRWRD\_RIGHT\ 3}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \#define\ FRWRD\_RIGHT\ 2}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \#define\ FRWRD\_LEFT\ 1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \#define\ STOP\ 0}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \#define\ BCKWRD\_LEFT\ -\/1}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \#define\ BCKWRD\_RIGHT\ -\/2}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \#define\ HARD\_BCKWRD\_RIGHT\ 3}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \#define\ HARD\_BCKWRD\_LEFT\ 4}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \#define\ BCKWRD\ -\/5\ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \#define\ ERR\ 0xFF}}
+\DoxyCodeLine{00035\ \ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \#define\ FR\_IR\_BIT\ 0}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \#define\ FL\_IR\_BIT\ 1}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \#define\ FFC\_IR\_BIT\ 2}}
+\DoxyCodeLine{00039\ \ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \#define\ CROSS\_THRESH(c,t)(c\ >\ t)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \#define\ algTickFreq\ CNTRLLOOP\_FREQ}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \#define\ pdMsToAlgTicks(ms)((ms)*\ algTickFreq\ /\ 1000)}}
+\DoxyCodeLine{00043\ \ }
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{track_alg0_8h_a95fa09c22dacbcd7d53a531cc4691ae3}{currentState}}\{}
+\DoxyCodeLine{00049\ \ }
+\DoxyCodeLine{00050\ \ \};}
+\DoxyCodeLine{00051\ \ }
+\DoxyCodeLine{00056\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstate__tick_count__t}{state\_tickCount\_t}}\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structstate__tick_count__t_a7aa5a136090706120d4dd27d566d57db}{current}};\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structstate__tick_count__t_a6d01e2a221c4f8aa64ee93d013287788}{target}};\ \ }
+\DoxyCodeLine{00059\ \ \};}
+\DoxyCodeLine{00060\ \ }
+\DoxyCodeLine{00065\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtrack_alg}{trackAlg}}\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvehicle}{vehicle}}\ *\_vehicle;\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\_t}}\ *irsensors;\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ uint8\_t\ edgeBool;\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ uint8\_t\ colorCommand;\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ int8\_t\ vehicle\_moveMode;\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ move\_mode(int8\_t\ mode);}
+\DoxyCodeLine{00079\ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtrack_alg_a78d6d044ded7a2c7a848ed402dea3e05}{init}}(\mbox{\hyperlink{classvehicle}{vehicle}}\ *\_veh,\ \mbox{\hyperlink{struct_i_rsensors__t}{IRsensors\_t}}\ *ir);}
+\DoxyCodeLine{00088\ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtrack_alg_a993271cb4275c99060c5c0e482b3479d}{readIr}}();}
+\DoxyCodeLine{00093\ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtrack_alg_a66270ae9aa4cb195b7edf30a9fdbc647}{run}}();}
+\DoxyCodeLine{00098\ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structtrack_alg_aa95874aabd3fb5b89fc4e9228976d5d9}{get\_edgeBool}}();}
+\DoxyCodeLine{00105\ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ int8\_t\ \mbox{\hyperlink{structtrack_alg_ad701d9dfd3355be8f32eac8a824f0219}{get\_vehicleMoveMode}}();}
+\DoxyCodeLine{00112\ \ \};}
+\DoxyCodeLine{00113\ \ }
+
+\end{DoxyCode}

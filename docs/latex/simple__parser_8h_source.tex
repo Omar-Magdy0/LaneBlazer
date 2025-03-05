@@ -1,0 +1,72 @@
+\doxysection{simple\+\_\+parser.\+h}
+\hypertarget{simple__parser_8h_source}{}\label{simple__parser_8h_source}\index{src/core/simple\_parser.h@{src/core/simple\_parser.h}}
+\mbox{\hyperlink{simple__parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{core.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{Config.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{delta__sys_8h}{core/delta\_sys.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//May\ Implement\ Safe\ conversion\ helper\ functions\ later}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//And\ String\ Validity\ checks\ (is\ a\ valid\ int,float\ etc\ representation)}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PARSER\_FEEDBACK\_SIZE\ 12}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GCODE\_MAX\_ARG\_COUNT\ 26}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LETTER\_NUM(c)(c\ -\/'A')}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IS\_VALID\_LETTER(c)(c\ <=\ 'Z'\ \&\&\ c\ >=\ 'A')}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ OK(c)\ do\{strcpy(c,\ "{}OK"{});\ return\ c;\}while(0)}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_g_code_args__t_a32474077818b90aaff7c6f19f754a7ef}{cmd}};}
+\DoxyCodeLine{00020\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_g_code_args__t_a06a63860fd301c5838df8354f964e676}{char\_found}};\ \ \ \ \textcolor{comment}{//\ Store\ if\ the\ character\ was\ found}}
+\DoxyCodeLine{00021\ \ \ \ \ int8\_t\ \mbox{\hyperlink{struct_g_code_args__t_a285ec23a1585c123345b83462207da1e}{char\_offset}}[\mbox{\hyperlink{simple__parser_8h_af591ff2eae2fac1a696c32fa62707a07}{GCODE\_MAX\_ARG\_COUNT}}];\ \ \ \ \ \textcolor{comment}{//\ Store\ the\ character\ offset\ in\ the\ string}}
+\DoxyCodeLine{00022\ \ \ \ \ int8\_t\ \mbox{\hyperlink{struct_g_code_args__t_a216cbe47e93ea192485eef0ee8ffd002}{count}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ arguments}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_g_code_args__t_a73edcfa11bf9da3e6416f3c550db846c}{foundArg}}(\textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{core_8h_a6225e347bbe9683f993ad93e534e1a89}{BV32}}(\mbox{\hyperlink{struct_g_code_args__t_a06a63860fd301c5838df8354f964e676}{char\_found}},\ \mbox{\hyperlink{simple__parser_8h_a9bad30b6f174e4d17f9987660ba11664}{LETTER\_NUM}}(c));}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{inline}\ int8\_t\ \mbox{\hyperlink{struct_g_code_args__t_a622facf9b3cd9741e2c95d768ed31dd6}{\_\_attribute\_\_}}((always\_inline))\ offset(\textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_g_code_args__t_a285ec23a1585c123345b83462207da1e}{char\_offset}}[\mbox{\hyperlink{simple__parser_8h_a9bad30b6f174e4d17f9987660ba11664}{LETTER\_NUM}}(c)];}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_aa752720351d0f3bc3259934f05cbc21b}{G0}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_ac40bacec1548e75966536aa1d36a59a5}{G1}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a3a435c4c3a1f2393668ba0760fd1c7d9}{G2}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a12ae59dd968a0a3eb87f1dc2441e5bdd}{G3}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a6bf7a668514d727579136558301da03b}{G4}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_aa5a6fcb1f811ed8fb93a0369e941e308}{G5}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a51df0d15328a699da36395d410932234}{G6}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a77888384fbd408b2b8550f79a5a412b8}{G7}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_ac22ddcb2997b56704870b36691bf1fa3}{G8}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_af2cf30254615c9e7267a517023116c68}{G9}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a19ea499dca63323ae62f67bc11ac15ba}{M0}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a85d2badc8794493b9081bba87d25d35e}{M1}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_ab4b9bd1e1beae1e64fa960c5add61890}{M2}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a1e65bb192c57b3753ecdf8916dceefb9}{M3}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a70b0e1df3c19ace6e13fc345ceca178b}{M4}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_adff68d63c115f188e430501f63e5d420}{M5}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a2a6ec7e7b9e65c8d226b74233a5a6390}{M6}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_aaa238ce18cb101a5c9b06549cf810309}{M7}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_af51a128c944dac09002b937a1587b87b}{M8}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a339bf8134b93ace8261af2d715f3906f}{M9}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//parser\ debugging\ command}}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simple__parser_8h_a8be82b6090d067ac0cbefce09e8daa7d}{G900}}(\mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ \&args);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{simple__parser_8h_aa014034b3f43cf01b3ab984d63fc9ba3}{parser\_feedback}}[\mbox{\hyperlink{simple__parser_8h_a9de49b357384e5e9ce4e0613350fbdf4}{PARSER\_FEEDBACK\_SIZE}}];}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsimple__parser}{simple\_parser}}\{}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{struct_g_code_args__t}{GCodeArgs\_t}}\ GCodeArgs;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsimple__parser_a623baf16995aaa2b2bf9e7cb8a8466c5}{reset}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classsimple__parser_a5505174cdfe60bd3605e901c20cd337a}{parse}}(\textcolor{keywordtype}{char}*\ \mbox{\hyperlink{main_8cpp_a03cf29ffa36d026dfc32074d9dfb792f}{cmd}});}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

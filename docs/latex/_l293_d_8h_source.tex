@@ -1,0 +1,41 @@
+\doxysection{L293\+D.\+h}
+\hypertarget{_l293_d_8h_source}{}\label{_l293_d_8h_source}\index{src/module/L293D.h@{src/module/L293D.h}}
+\mbox{\hyperlink{_l293_d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{../Config.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}<u\textcolor{keywordtype}{int}8\_t\ D1\_pin,\ u\textcolor{keywordtype}{int}8\_t\ D2\_pin,\ u\textcolor{keywordtype}{int}8\_t\ EN\_pin,\ u\textcolor{keywordtype}{int}8\_t\ D1\_logic,\ u\textcolor{keywordtype}{int}8\_t\ EN\_logic>}
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___l293_d___drive__hal}{\_L293D\_Drive\_hal}}\{}
+\DoxyCodeLine{00029\ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct___l293_d___drive__hal_adf743c08271db01031ea66e5015db5b9}{init}}()\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ pinMode(D1\_pin,\ OUTPUT);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ pinMode(D2\_pin,\ OUTPUT);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ pinMode(EN\_pin,\ OUTPUT);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ analogWriteResolution(\mbox{\hyperlink{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef}{MOT\_PWM\_RES\_BITS}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ analogWriteFrequency(\mbox{\hyperlink{_config_8h_a739dbf0bb567c3d3b32b208409aee17c}{MOT\_PWM\_RES\_FREQ}});}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct___l293_d___drive__hal_aa6ff14095d4ae9e692d75dd218589906}{set\_power}}(\textcolor{keywordtype}{float}\ pwr)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pwr\ >\ 0)\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(D1\_pin,\ D1\_logic);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(D2\_pin,\ !D1\_logic);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(D1\_pin,\ !D1\_logic);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(D2\_pin,\ D1\_logic);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ uint16\_t\ pwm\_val\ =\ (abs(pwr)/100)\ *\ (\ (1<<\mbox{\hyperlink{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef}{MOT\_PWM\_RES\_BITS}})\ -\/\ 1);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(EN\_logic\ ==\ HIGH)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ analogWrite(EN\_pin,\ pwm\_val);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ analogWrite(EN\_pin,\ (1<<\mbox{\hyperlink{_config_8h_aae29c1b5af8b8c2630be114fe8f941ef}{MOT\_PWM\_RES\_BITS}})\ -\/\ pwm\_val);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \};}
+
+\end{DoxyCode}
